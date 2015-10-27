@@ -1,0 +1,312 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Canvas &mdash; Mobile App Tutorial 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Mobile App Tutorial 0.1 documentation" href="../index.html"/>
+        <link rel="next" title="Appendix" href="../appendix/index.html"/>
+        <link rel="prev" title="Math" href="../math/index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Mobile App Tutorial
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements/index.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emulator-installation/index.html">Emulator Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../the-basics/index.html">The Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../camera/index.html">Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/index.html">Math</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Canvas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Mobile App Tutorial</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Canvas</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/canvas/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="canvas">
+<h1>Canvas<a class="headerlink" href="#canvas" title="Permalink to this headline">¶</a></h1>
+<p>Imagine that you are an app inventor living in Podunka, IL. There happens to be a local folk singer
+there named Fiona Blueheart. Fiona recently released a new single called <em>Mustaches
+and Cat Eyes</em>. Like any forward-thinking indie musician, she decides to create a fun app to help promote her
+single.</p>
+<p>Fiona is an avid user of App Inventor and has already made a rudimentary
+first version. Unfortunately, she needs to prepare for her upcoming tour
+and doesn't have time to finish it. Download <a class="reference download internal" href="../_downloads/MustachesAndCatEyes.aia"><code class="xref download docutils literal"><span class="pre">MustachesAndCatEyes.aia</span></code></a>
+and <a class="reference internal" href="../appendix/importing-projects/index.html"><em>import the project into App Inventor</em></a>.
+After the imported project loads, the screen will look like this:</p>
+<img alt="../_images/canvas-designer.png" src="../_images/canvas-designer.png" />
+<p>Run the app on your phone. Some blocks have already been added to this
+project. If you click the &quot;Take picture&quot; button, the <code class="docutils literal"><span class="pre">Camera</span></code> will
+take a picture and then set it as the background image of the
+<code class="docutils literal"><span class="pre">Canvas</span></code>. If you drag your finger across <code class="docutils literal"><span class="pre">Canvas</span></code>, black lines will
+be drawn (this happens regardless of whether you took a picture or not).
+However, this program is not yet complete! If you click on the Clear
+button, nothing happens. That means that you can't mess up when you're
+drawing the mustache, because you only have one chance to get it right!</p>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p class="last">Add the blocks necessary to make it so that when the user clicks on the Clear button, whatever is drawn in the canvas is cleared.</p>
+</div>
+<p>Now your user can try as many times as she likes to draw the perfect
+mustache. But how do we bestow cat eyes upon the subject of the photo?</p>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p>Add some blocks so that when the user touches the canvas, a cat emoji is drawn at the point where she touched. Feel free to use this emoji: 😸</p>
+<p class="exercise-hint">
+<button>Hint</button><span class="hidden">Emojis, despite being graphical in nature, still count as text.</span></p><p class="last exercise-hint">
+<button>Hint</button><span class="hidden">You should use the <code class="docutils literal"><span class="pre">Canvas.Touched</span></code> block. Although <code class="docutils literal"><span class="pre">Canvas.TouchDown</span></code> and
+<code class="docutils literal"><span class="pre">Canvas.TouchUp</span></code> would both basically work, only <code class="docutils literal"><span class="pre">Canvas.Touched</span></code> represents
+the act of the user pressing down and then lifting up their finger on
+the canvas.</span></p></div>
+<p>Fiona is pretty pleased that the Clear button works, but she tells you
+that there are a whole bunch of cat face emojis, and she wants to be able to
+choose which one to draw on the canvas.</p>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p>Add a <code class="docutils literal"><span class="pre">ListPicker</span></code> to your app that lets the user select which cat emoji
+should be drawn when they touch the canvas. For reference, here all the
+cat face emojis: 😸😹😺😻😼😽😾😿🙀.</p>
+<p class="last exercise-hint">
+<button>Hint</button><span class="hidden">You won't need any of the yellow <code class="docutils literal"><span class="pre">when</span></code> blocks, and you only need to swap out one block in the Blocks interface.</span></p></div>
+<p>Fiona loves the new feature, and promptly sends you a picture of herself
+with a hearts cat for a right eye and a kissy cat for the left eye. But
+she tells you that you're not done yet, because she wants to be able to
+draw mustaches in other colors.</p>
+<p>To solve the multicolor mustache problem, we need some kind of color
+picker widget. Unfortunately, such a widget doesn't exist in App
+Inventor. You can try implementing one on your own!</p>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p>Use a <code class="docutils literal"><span class="pre">ListPicker</span></code> to create a rudimentary color picker. For now, just
+allow the user to select the colors black, red, green, and blue. After
+you've selected a color, dragging on the Canvas should produce lines of
+that color.</p>
+<p class="last exercise-hint">
+<button>Hint</button><span class="hidden">You'll need to use <code class="docutils literal"><span class="pre">else</span> <span class="pre">if</span></code> blocks.</span></p></div>
+<p>This is definitely a viable way to create a simple color picker, but if
+you wanted to support all 13 basic colors in App Inventor you'd end up
+with an <code class="docutils literal"><span class="pre">if</span> <span class="pre">block</span></code> that contains more than 70 blocks! If you did it as
+a procedure (making it more reusable), it would look something like this:</p>
+<img alt="../_images/else-if-blocks.png" src="../_images/else-if-blocks.png" />
+<p>As usual, there's a better way to do it. Download <a class="reference download internal" href="../_downloads/ColorPicker.aia"><code class="xref download docutils literal"><span class="pre">ColorPicker.aia</span></code></a> and import it into App Inventor. This project implements a color picker that was made in a less obvious way, but is easier to work with in the long run:</p>
+<img alt="../_images/list-of-lists-blocks.png" src="../_images/list-of-lists-blocks.png" />
+<p>As you can see, it's a procedure whose distinguishing feature is that it
+uses a list of lists. Each sublist in the <code class="docutils literal"><span class="pre">pairs</span></code> list is actually a
+key-value pair. In other words, <code class="docutils literal"><span class="pre">pairs</span></code> is a lookup table.
+Conceptually, it's equivalent to a spreadsheet with two columns:</p>
+<img alt="../_images/spreadsheet1.png" src="../_images/spreadsheet1.png" />
+<p>The <code class="docutils literal"><span class="pre">look</span> <span class="pre">up</span> <span class="pre">in</span> <span class="pre">pairs</span></code> block at the bottom of the procedure looks for
+a key (left column) and returns the corresponding value in the same row
+(right column). If the key is not found, then it returns whatever you
+put in the <code class="docutils literal"><span class="pre">notFound</span></code> slot (in this case it's a <code class="docutils literal"><span class="pre">black</span></code> color
+block).</p>
+<p>So, this color picker seems decent enough, but it's in the wrong
+project. You could just rebuild it block-for-block in the Canvas project
+but that seems a bit laborious. This is the problem that the Backpack is
+designed to solve (you know, that thing in the upper right corner of the
+Blocks interface):</p>
+<img alt="../_images/backpack.png" src="../_images/backpack.png" />
+<p>Drag the <code class="docutils literal"><span class="pre">colorFromName</span></code> procedure block and the
+<code class="docutils literal"><span class="pre">ColorPicker.AfterPicking</span></code> block into the Backpack. Now, select My
+Projects from the menu and go back to the Canvas project. In Blocks,
+drag both blocks from the Backpack into your project. Run your app to
+make sure that you can draw with all those different colors.</p>
+<p>Yay, Fiona is happy with her app and it's a big hit (at least among the
+residents of Podunka). One day, Aunt Polly calls you up and says that
+she wants to draw a beige mustache on her cockerdoodle and could you
+please add beige as a color choice. A few hours later, you get a text
+from Puddles the cockerdoodle requesting the addition of turquoise.</p>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p>Add beige and turquoise to the color picker. Note that neither of these colors is built-in.</p>
+<p class="last exercise-hint">
+<button>Hint</button><span class="hidden">You can lookup RGB values for colors from <a class="reference external" href="http://www.w3schools.com/tags/ref_color_tryit.asp">this page</a>.</span></p></div>
+<p>Excellent! In this chapter, you learned about <code class="docutils literal"><span class="pre">Canvas</span></code>, using lists of
+lists as lookup tables, the Backpack feature, and how to use any color.
+You've taken another step closer to becoming Master of the Universe!</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../appendix/index.html" class="btn btn-neutral float-right" title="Appendix" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../math/index.html" class="btn btn-neutral" title="Math" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/jquery.fitvids.js"></script>
+      <script type="text/javascript" src="../_static/custom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

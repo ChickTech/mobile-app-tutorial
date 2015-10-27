@@ -1,0 +1,31 @@
+.hidden {
+    display: none !important;
+}
+
+.rst-content .exercise .admonition-title {
+  background-color: #DA70D6;
+}
+
+.rst-content .exercise {
+  background-color: #F5D0F5;
+  padding: 12px;
+  line-height: 24px;
+  margin-bottom: 24px;
+}
+
+.rst-content .exercise p:last-child {
+  margin-bottom: 0;
+}
+
+.exercise-hint button {
+  margin-right: 5px;
+}
+
+.fluid-width-video-wrapper {
+  margin: 32px 0;
+}
+
+blockquote {
+  border-left: 5px solid #4A4A4A;
+  padding-left: 20px;
+}

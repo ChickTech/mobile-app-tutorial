@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The Basics &mdash; Mobile App Tutorial 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/tutorial.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Mobile App Tutorial 0.1 documentation" href="../index.html"/>
+        <link rel="next" title="Camera" href="../camera/index.html"/>
+        <link rel="prev" title="Emulator Installation" href="../emulator-installation/index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Mobile App Tutorial
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements/index.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emulator-installation/index.html">Emulator Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">The Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../camera/index.html">Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/index.html">Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../canvas/index.html">Canvas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Mobile App Tutorial</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>The Basics</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/the-basics/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-basics">
+<h1>The Basics<a class="headerlink" href="#the-basics" title="Permalink to this headline">¶</a></h1>
+<p>Sign into <a class="reference external" href="http://ai2.appinventor.mit.edu/">App Inventor</a> in your
+browser, then download <a class="reference download internal" href="../_downloads/marmoset.jpg"><code class="xref download docutils literal"><span class="pre">this</span> <span class="pre">lovely</span> <span class="pre">image</span></code></a> to your computer.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Before you begin, we highly recommend that you <a class="reference internal" href="../appendix/turn-autoplay-off/index.html"><em>turn Autoplay off on YouTube</em></a>.</p>
+</div>
+<p>Follow the steps in the video below to create your first interface:</p>
+<iframe src="https://www.youtube.com/embed/Bz5FVfCF9uQ" frameborder="0" allowfullscreen></iframe><p>To run the app on your phone, launch <a class="reference external" href="https://play.google.com/store/apps/details?id=edu.mit.appinventor.aicompanion3&amp;hl=en">MIT AI2
+Companion</a>:</p>
+<iframe src="https://www.youtube.com/embed/2ZNdSvvhT5M" frameborder="0" allowfullscreen></iframe><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are using an emulator, you'll need to select <code class="docutils literal"><span class="pre">Connect</span> <span class="pre">&gt;</span> <span class="pre">USB</span></code> from the menu instead.</p>
+</div>
+<p>That's it! You should be able to see your app running now. It isn't much
+at the moment but we're just getting warmed up.</p>
+<p>Right now there's no way for the user to interact with your program. Add
+a text box and some buttons to your interface:</p>
+<iframe src="https://www.youtube.com/embed/svSpSzWOyio" frameborder="0" allowfullscreen></iframe><p>Notice how you renamed the text box from <code class="docutils literal"><span class="pre">TextBox1</span></code> to
+<code class="docutils literal"><span class="pre">AnswerTextBox1</span></code>. In general, you should give descriptive names to the
+widgets in your app that will interact with the user.</p>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p class="last">Rename <code class="docutils literal"><span class="pre">Button1</span></code> to <code class="docutils literal"><span class="pre">SubmitButton</span></code>, <code class="docutils literal"><span class="pre">Button2</span></code> to <code class="docutils literal"><span class="pre">Hint1Button</span></code>, and <code class="docutils literal"><span class="pre">Button3</span></code> to <code class="docutils literal"><span class="pre">Hint2Button</span></code>.</p>
+</div>
+<p>Right now nothing happens if you press the buttons. Let's give the user
+a hint if she presses the first hint button. We can do that by using the
+<code class="docutils literal"><span class="pre">Notifier</span></code> widget:</p>
+<iframe src="https://www.youtube.com/embed/Ypaul4tF0Jk" frameborder="0" allowfullscreen></iframe><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Notifier is not a component that is visible in your interface. However, you need to drag it onto the Screen because if you don't, it will not be available to use in the Blocks interface.</p>
+</div>
+<p>Run the app again and see what happens. Congratulations, your mobile app
+is now interactive!</p>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p>Show a different hint when the other hint button is pressed. For the message, you could use: <em>My name rhymes with &quot;big bee karma debt&quot;</em>.</p>
+<p class="last exercise-hint">
+<button>Hint</button><span class="hidden">You don't need to add a new <code class="docutils literal"><span class="pre">Notifier</span></code> component; you can just reuse the existing one.</span></p></div>
+<p>Now we need to add some behavior for when the user presses the Submit
+button. When that happens, we want to check if she entered the correct
+answer in the <code class="docutils literal"><span class="pre">TextBox</span></code>, and, if she did, we'll congratulate her.
+Here's how to do that:</p>
+<iframe src="https://www.youtube.com/embed/J6fclajz1v4" frameborder="0" allowfullscreen></iframe><p>Now run it again. Yay, you're program is now fully functional! Wasn't
+that easy?</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">You might have noticed that all the components and blocks in App
+Inventor are quite &quot;chatty&quot;. That is, they love to tell you what they
+are and how to use them. To get more information on a component in the
+Designer interface, click the question mark next to it. To get more
+information on a block in the Blocks interface, hover your mouse over it
+(although please note that some blocks don't show any help text when you hover
+over them).</p>
+</div>
+<p>Although the app works now, we haven't given any thought to layout.
+There's no reason all the widgets need to be vertically stacked. Many
+times we'll want to put widgets on the same row to save space or
+increase coherence. Here's how to do that with the
+<code class="docutils literal"><span class="pre">HorizontalArrangement</span></code> component:</p>
+<iframe src="https://www.youtube.com/embed/ZadTsaU_Mh4" frameborder="0" allowfullscreen></iframe><div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p class="last">Use <code class="docutils literal"><span class="pre">HorizontalArrangement</span></code> to also put the two hint buttons side by side on their own row.</p>
+</div>
+<p>Right now, the program only reacts if the user submits a correct answer,
+and does nothing if the answer isn't correct. That isn't very
+user-friendly! We can give a word of encouragement by adding an <code class="docutils literal"><span class="pre">else</span></code>
+block to our <code class="docutils literal"><span class="pre">if</span></code> block:</p>
+<iframe src="https://www.youtube.com/embed/wMhzAF4pIDA" frameborder="0" allowfullscreen></iframe><p>Nice! But this program could still be a bit more friendly. For example,
+what if the player entered an answer that was technically correct, but
+not the answer we are looking for? For example, let's say that the
+player entered &quot;marmoset&quot;. We may want to give her a specific message in
+that case to let her know that she's on the right track. We can do that
+using the <code class="docutils literal"><span class="pre">if</span> <span class="pre">else</span></code> block.</p>
+<iframe src="https://www.youtube.com/embed/QTg_A97xkJc" frameborder="0" allowfullscreen></iframe><p>Run the app again and see what happens when you submit &quot;marmoset&quot; as
+your answer.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">When adding blocks to your program, you can save time by duplicating existing blocks and then changing them slightly to suit your purposes.</p>
+</div>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p>App Inventor allows you to add as many else if blocks as you like. Add
+another two else if blocks that handle the cases of the player entering
+the words &quot;animal&quot; and &quot;stuffed animal&quot;.</p>
+<p class="last exercise-hint">
+<button>Hint</button><span class="hidden">Remember that the blue gear icon on an <code class="docutils literal"><span class="pre">if</span></code> block is used to open up a
+little window that allows you to drag more <code class="docutils literal"><span class="pre">else</span> <span class="pre">if</span></code> blocks inside the <code class="docutils literal"><span class="pre">if</span></code>
+block. To close the little window, simply click the blue gear again.</span></p></div>
+<p>Run your app and try submitting &quot;pygmy marmoset &quot; (note the extra space
+at the end). Your program doesn't accept it as the right answer! That's
+because computers are very exacting about input values; they don't
+understand the concept of &quot;mostly correct&quot;. We can address this by using
+the <code class="docutils literal"><span class="pre">trim</span></code> block:</p>
+<iframe src="https://www.youtube.com/embed/ZVH3VW_5HOo" frameborder="0" allowfullscreen></iframe><p>Now your app will accept the right answer, no matter how many spaces
+there are around it. Try entering &quot; pygmy marmoset &quot; (spaces on both
+sides) and verify that it works.</p>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p>A similar problem exists for uppercase/lowercase. Try entering &quot;PYGMY
+MARMOSET&quot; as your answer to see what we mean. Use the <code class="docutils literal"><span class="pre">upcase</span></code> block in
+the Text section to address this.</p>
+<p class="last exercise-hint">
+<button>Hint</button><span class="hidden">The <code class="docutils literal"><span class="pre">upcase</span></code> block is a little weird, because once you've dragged it
+into your program you can click on the dropdown to convert it to the
+<code class="docutils literal"><span class="pre">downcase</span></code> block. The easiest way to complete the exercise, incidentally,
+is to use the <code class="docutils literal"><span class="pre">downcase</span></code> block.</span></p></div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">You may have noticed by now that the program running inside your phone
+doesn't always change when you update your blocks. That may be because
+the version of your program on your phone is lagging behind. You can
+force an update by clicking on the Designer button, then clicking on the
+Blocks button.</p>
+</div>
+<p>Great, now our app is much more lenient with accepting correct answers.
+But what about the other conditions in our <code class="docutils literal"><span class="pre">if</span></code> block? For example, if
+you submit &quot;  Marmoset  &quot;, you can see that your program doesn't yet do
+the right thing. Based only on what you've learned so far, your first
+instinct might be to apply the <code class="docutils literal"><span class="pre">trim</span></code> and <code class="docutils literal"><span class="pre">downcase</span></code> blocks to every
+<code class="docutils literal"><span class="pre">AnswerTextBox.Text</span></code> block. That will certainly work, but App Inventor
+gives you a better way: the <code class="docutils literal"><span class="pre">initialize</span> <span class="pre">local</span></code> block!</p>
+<iframe src="https://www.youtube.com/embed/0EvSiRYizS4" frameborder="0" allowfullscreen></iframe><p>The <code class="docutils literal"><span class="pre">initialize</span> <span class="pre">local</span></code> block creates a variable with a name of your
+choosing (in the video we called it &quot;answer&quot;). A variable is just a
+block that has a name and can store a value. In the video above we
+created a variable called <code class="docutils literal"><span class="pre">answer</span></code> and initialized it with the value
+of <code class="docutils literal"><span class="pre">downcase[trim[AnswerTextBox.Text]]</span></code>. You should use a variable
+whenever you want to use the same value more than once.</p>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p class="last">Replace the other <code class="docutils literal"><span class="pre">AnswerTextBox.Text</span></code> blocks with the <code class="docutils literal"><span class="pre">get</span> <span class="pre">answer</span></code> variable block.</p>
+</div>
+<p>Your app is already pretty good, but now it's time to make it snazzy.
+Let's make your phone talk!</p>
+<iframe src="https://www.youtube.com/embed/YOHR-rvPEes" frameborder="0" allowfullscreen></iframe><p>Run the app again. Voila, you now know how to make your phone say
+anything you want it to! (Please try to resist the urge to make it say
+swear words.)</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">App Inventor also allows you to use the keyboard to duplicate a block,
+which is quicker than the right-click method. Just select a block, and
+then perform a copy (Ctrl/⌘-c) followed by a paste (Ctrl/⌘-v).</p>
+</div>
+<p>OK, but what if we want our program to talk every time the player
+submits an answer, regardless of whether her answer was right? Of
+course, you can achieve that by copying all the
+<code class="docutils literal"><span class="pre">call</span> <span class="pre">TextToSpeech1.Speak</span></code> blocks and then modifying them. But if you
+have a lot of <code class="docutils literal"><span class="pre">if</span> <span class="pre">else</span></code> blocks, that's a ton of extra work!</p>
+<p>Fortunately, programming is all about working smarter, not harder. We
+can use a procedure to make it easier for us to add speech
+functionality:</p>
+<iframe src="https://www.youtube.com/embed/-HngAmkASag" frameborder="0" allowfullscreen></iframe><p>A procedure is basically a custom block whose behavior is defined by
+you. After you define a procedure, you can use it in any other block, as
+if it was one of the blocks provided by default. You should use a
+procedure whenever you notice that your program has a repetitive
+structure.</p>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p class="last">Replace the remaining <code class="docutils literal"><span class="pre">Notifier1.ShowAlert</span></code> blocks with <code class="docutils literal"><span class="pre">announce</span></code> blocks.</p>
+</div>
+<p>Remember, variables are used to store values, while procedures are used
+to store other blocks. Often, a procedure comes with its own variables,
+which can be modified by adding or removing <code class="docutils literal"><span class="pre">input</span></code> blocks inside the
+procedure block. Don't worry, all of this will become more clear as we
+move forward.</p>
+<p>Perhaps you've wondered to yourself what kind of person can create
+programs. Now you know the answer: You. Believe it or not, you now know
+80% of what you need to know to work with App Inventor.</p>
+<p>Next, let's play around with the <a class="reference internal" href="../camera/index.html"><em>camera</em></a>.</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../camera/index.html" class="btn btn-neutral float-right" title="Camera" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../emulator-installation/index.html" class="btn btn-neutral" title="Emulator Installation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/jquery.fitvids.js"></script>
+      <script type="text/javascript" src="../_static/tutorial.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

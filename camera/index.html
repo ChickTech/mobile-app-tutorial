@@ -1,0 +1,324 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Camera &mdash; Mobile App Tutorial 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Mobile App Tutorial 0.1 documentation" href="../index.html"/>
+        <link rel="next" title="Math" href="../math/index.html"/>
+        <link rel="prev" title="The Basics" href="../the-basics/index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Mobile App Tutorial
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../the-basics/index.html">The Basics</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/index.html">Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Mobile App Tutorial</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Camera</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/camera/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="camera">
+<h1>Camera<a class="headerlink" href="#camera" title="Permalink to this headline">¶</a></h1>
+<p>Create a new project in App Inventor, and name it &quot;Camera&quot;. To start,
+drag and drop components in the Designer to replicate the screen below:</p>
+<img alt="../_images/camera-interface.png" src="../_images/camera-interface.png" />
+<p>Now watch the following video to understand the behaviors that we are
+going to add to this program:</p>
+<iframe src="https://www.youtube.com/embed/W3SMmBR_vQM" frameborder="0" allowfullscreen></iframe><p>It can be useful to think of a program as the script for a stage play.
+In this case, the actors are <code class="docutils literal"><span class="pre">Camera</span></code>, <code class="docutils literal"><span class="pre">Button</span></code>, and <code class="docutils literal"><span class="pre">Image</span></code>. Just
+as in a real script, each actor has a role to play, and must respond
+appropriately to another actor's actions. You, as the
+writer/director/set designer of the play, want to make sure that:</p>
+<ul class="simple">
+<li>When the <code class="docutils literal"><span class="pre">Button</span></code> is clicked, it calls for <code class="docutils literal"><span class="pre">Camera</span></code> to take a picture.</li>
+<li>After the <code class="docutils literal"><span class="pre">Camera</span></code> takes the picture, it calls for the <code class="docutils literal"><span class="pre">Image</span></code> to display that picture.</li>
+</ul>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p>Use the Blocks interface to create behavior shown in the video above.</p>
+<p class="exercise-hint">
+<button>Hint</button><span class="hidden">You only need 5 blocks to complete this exercise. Take it one step at a time. Think about which component you need to use, and what kind of block within that component will be useful. Remember that most blocks will tell you what they do if you hover over them. If you get stuck, just ask for help.</span></p><p class="last exercise-hint">
+<button>Hint</button><span class="hidden">You need to make use of the <code class="docutils literal"><span class="pre">set</span> <span class="pre">Image1.Picture</span></code> block.</span></p></div>
+<p>Run your app again to verify that it works as expected.</p>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p class="last">After the Camera takes a picture, you get a variable called <code class="docutils literal"><span class="pre">image</span></code>, which is the path (location) of the image on your phone. Add a <code class="docutils literal"><span class="pre">Notifier</span></code> component, and make it show the location of the image after a picture is taken.</p>
+</div>
+<p>Now when you run your app, you'll see some text that looks something
+like this:
+<code class="docutils literal"><span class="pre">file:///storage/emulated/0/Pictures/app_inventor_1442323449391.jpg</span></code>.
+If you have a File Manager app on your phone, you can go into the
+<code class="docutils literal"><span class="pre">Pictures</span></code> directory to see the image file.</p>
+<p>Taking a picture for yourself is nice, but wouldn't it be cool to share
+your pictures with friends? Let's add a Share button! Arrange the
+components in the Block interface so they look like this:</p>
+<img alt="../_images/share-button.png" src="../_images/share-button.png" />
+<p>Now go into the Blocks interface and add a <code class="docutils literal"><span class="pre">ShareButton.Click</span></code> block.
+Inside of that, add a <code class="docutils literal"><span class="pre">Sharing1.ShareFile</span></code> block. The
+<code class="docutils literal"><span class="pre">Sharing1.ShareFile</span></code> block has one slot, representing the file that
+you wish to share. Try dragging the <code class="docutils literal"><span class="pre">get</span> <span class="pre">image</span></code> block into this slot.
+Unfortunately, an angry red triangle will appear, indicating an error:</p>
+<img alt="../_images/get-image-error.png" src="../_images/get-image-error.png" />
+<p>Why can't we put <code class="docutils literal"><span class="pre">get</span> <span class="pre">image</span></code> there? It's because <code class="docutils literal"><span class="pre">image</span></code> is a
+variable that is only available to the <code class="docutils literal"><span class="pre">Camera1.Picture</span></code> block, so it
+cannot be used in other blocks! To solve this problem, we must use a
+global variable:</p>
+<iframe src="https://www.youtube.com/embed/gtiSEOXz5TM" frameborder="0" allowfullscreen></iframe><p>Note that we used the same name, &quot;image&quot;, for our global variable as our
+local variable. This is not a problem for App Inventor, because <code class="docutils literal"><span class="pre">get</span></code>
+blocks that reference global variables always have the word &quot;global&quot; in
+their names. However, you might confuse yourself when you have a global
+variable with the same name as a local variable, so when possible, use a
+different name for the global variable.</p>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p class="last">Change the name of the global variable from &quot;image&quot; to &quot;imageFile&quot;.</p>
+</div>
+<p>Run your app again. If you have other applications that are capable of
+transferring files, such as Facebook, Gmail, or Dropbox, you should be
+able to send your picture to them after clicking on the Share button.</p>
+<p>In general, global variables are more work to deal with than local
+variables, but you should use a global variable (i.e. the
+<code class="docutils literal"><span class="pre">initialize</span> <span class="pre">global</span></code> block) whenever you need to access a variable in
+more than one block. You'll see more global variables in other parts of
+this tutorial.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Inside MIT AI2 Companion (running on your phone), the app automatically refreshes when you make changes in App Inventor (in your browser). However, you sometimes want to refresh the state of your app without making any changes. The easiest way to do this is to go to the Designer interface, select any component, and toggle one of the checkboxes in the Properties sidebar. For example, in the Camera project, you could select <code class="docutils literal"><span class="pre">TakePictureButton</span></code>, click its Enabled checkbox, then click the checkbox again.</p>
+</div>
+<p>Your program actually has a small bug right now. Refresh the app on the
+phone (that is, restore it to the state where no picture is showing),
+and press the Share button. What happens?</p>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p class="last">The <code class="docutils literal"><span class="pre">Sharing1.ShareFile</span> <span class="pre">block</span></code> can't do its work because the global variable <code class="docutils literal"><span class="pre">imageFile</span></code> doesn't have a reasonable value. To see what value imageFile has before you take a picture, put a <code class="docutils literal"><span class="pre">Notifier1.ShowAlert[getglobal</span> <span class="pre">imageFile]]</span></code> block inside of <code class="docutils literal"><span class="pre">ShareButton.Click</span></code>.</p>
+</div>
+<p>So, <code class="docutils literal"><span class="pre">imageFile</span></code> gets set to the number <code class="docutils literal"><span class="pre">0</span></code> by default, but it
+doesn't have to be that way. You'll notice that the
+<code class="docutils literal"><span class="pre">initialize</span> <span class="pre">global</span> <span class="pre">file</span></code> block has an empty slot, so you can set the
+value yourself so that you know for certain what it is.</p>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p>Initialize global variable <code class="docutils literal"><span class="pre">imageFile</span></code> with an empty <code class="docutils literal"><span class="pre">Text</span></code> block (one that has no value). Also add a block to <code class="docutils literal"><span class="pre">ShareButton.Click</span></code> that prevents sharing from happening if the value of <code class="docutils literal"><span class="pre">imageFile</span></code> is empty text.</p>
+<p class="last exercise-hint">
+<button>Hint</button><span class="hidden">At first, there doesn't seem to be an ≠ block, but if you drag the = block out you can use its dropdown to change it to an ≠ block.</span></p></div>
+<p>Run your app now to verify that no error message appears when you press
+the Share button before taking a picture.</p>
+<p>OK, that works, but is it the best solution to the problem? Why should
+we let the user click the button at all if a picture hasn't been taken
+yet?</p>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p>Disable <code class="docutils literal"><span class="pre">ShareButton</span></code> by unchecking its Enabled checkbox in the Properties sidebar of the Designer interface. Then add another block to <code class="docutils literal"><span class="pre">Camera1.AfterPicture</span></code> that enables it.</p>
+<p class="last exercise-hint">
+<button>Hint</button><span class="hidden">You'll need to use the true block in the Logic group of the Blocks sidebar.</span></p></div>
+<p>Hooray, now the Share button can't be clicked until after a picture has
+been taken! Now the <code class="docutils literal"><span class="pre">if</span></code> block inside of <code class="docutils literal"><span class="pre">ShareButton.Click</span></code> isn't
+even necessary anymore—you can safely get rid of it (but don't delete
+the blocks inside of it).</p>
+<p>In this chapter of the tutorial, you learned about the <code class="docutils literal"><span class="pre">Camera</span></code> widget
+and the concept of global variables. You also hopefully started to get a
+sense of the process of programming. Roughly speaking, it goes something
+like this:</p>
+<ol class="arabic simple">
+<li>You get something to work</li>
+<li>You realize there's a problem with how it works</li>
+<li>You fix the problem</li>
+<li>You realize it could work a little better</li>
+<li>Go back to step 1</li>
+</ol>
+<p>This process repeats, over and over, for each feature in a program. Then
+you have to do it again when it's time to come out with a new version.
+As of this writing, the Chrome browser, which you are probably using, is
+on its 45th version (not even counting all the minor versions in
+between)! It's very rare for a non-trivial program to ever be
+&quot;finished&quot;—there is almost always something that can be improved. That
+may seem discouraging at first, but now you can understand why
+programmers tend to have good job security ;-)</p>
+<p>Next, let's do a little bit of <a class="reference internal" href="../math/index.html"><em>math</em></a>.</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../math/index.html" class="btn btn-neutral float-right" title="Math" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../the-basics/index.html" class="btn btn-neutral" title="The Basics" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/jquery.fitvids.js"></script>
+      <script type="text/javascript" src="../_static/custom.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
