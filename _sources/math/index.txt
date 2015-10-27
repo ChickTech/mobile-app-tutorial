@@ -76,7 +76,12 @@ a ``Screen1.Initialize`` block:
   Add a new procedure called ``setDescriptionValue`` that takes two
   inputs, ``segment`` and ``replacement``, which can take the place of a ``set DescriptionLabel.Text`` block. It's not so bad in this program, but if you had a lot of variables in your description you would be very happy to have a procedure that does the heavy lifting for you!
 
-  .. exercisehint:: This is how you would :download:`start making the setDescriptionValue block <setDescriptionValue-block.png>`.
+  .. exercisehint::
+
+    This is how you would set up the ``setDescriptionValue`` block:
+
+    .. image:: setDescriptionValue-block.png
+
 
 Congratulations, you've completed all of the core chapters in this
 tutorial. You can now do the other chapters in any order that you like,

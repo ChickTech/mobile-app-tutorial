@@ -28,7 +28,7 @@
   
 
   
-    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tutorial.css" type="text/css" />
   
 
   
@@ -84,9 +84,14 @@
             
             
                 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements/index.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emulator-installation/index.html">Emulator Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../the-basics/index.html">The Basics</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Camera</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../math/index.html">Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../canvas/index.html">Canvas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a></li>
 </ul>
 
@@ -151,9 +156,9 @@ writer/director/set designer of the play, want to make sure that:</p>
 <div class="admonition exercise">
 <p class="first admonition-title">Exercise</p>
 <p>Use the Blocks interface to create behavior shown in the video above.</p>
-<p class="exercise-hint">
-<button>Hint</button><span class="hidden">You only need 5 blocks to complete this exercise. Take it one step at a time. Think about which component you need to use, and what kind of block within that component will be useful. Remember that most blocks will tell you what they do if you hover over them. If you get stuck, just ask for help.</span></p><p class="last exercise-hint">
-<button>Hint</button><span class="hidden">You need to make use of the <code class="docutils literal"><span class="pre">set</span> <span class="pre">Image1.Picture</span></code> block.</span></p></div>
+<div class="exercise-hint">
+<button>Hint</button><div class="hidden hint-body">You only need 5 blocks to complete this exercise. Take it one step at a time. Think about which component you need to use, and what kind of block within that component will be useful. Remember that most blocks will tell you what they do if you hover over them. If you get stuck, just ask for help.</div></div><div class="last exercise-hint">
+<button>Hint</button><div class="hidden hint-body">You need to make use of the <code class="docutils literal"><span class="pre">set</span> <span class="pre">Image1.Picture</span></code> block.</div></div></div>
 <p>Run your app again to verify that it works as expected.</p>
 <div class="admonition exercise">
 <p class="first admonition-title">Exercise</p>
@@ -214,8 +219,8 @@ value yourself so that you know for certain what it is.</p>
 <div class="admonition exercise">
 <p class="first admonition-title">Exercise</p>
 <p>Initialize global variable <code class="docutils literal"><span class="pre">imageFile</span></code> with an empty <code class="docutils literal"><span class="pre">Text</span></code> block (one that has no value). Also add a block to <code class="docutils literal"><span class="pre">ShareButton.Click</span></code> that prevents sharing from happening if the value of <code class="docutils literal"><span class="pre">imageFile</span></code> is empty text.</p>
-<p class="last exercise-hint">
-<button>Hint</button><span class="hidden">At first, there doesn't seem to be an ≠ block, but if you drag the = block out you can use its dropdown to change it to an ≠ block.</span></p></div>
+<div class="last exercise-hint">
+<button>Hint</button><div class="hidden hint-body">At first, there doesn't seem to be an <code class="docutils literal"><span class="pre">≠</span></code> block, but if you drag the <code class="docutils literal"><span class="pre">=</span></code> block out you can use its dropdown to change it to an <code class="docutils literal"><span class="pre">≠</span></code> block.</div></div></div>
 <p>Run your app now to verify that no error message appears when you press
 the Share button before taking a picture.</p>
 <p>OK, that works, but is it the best solution to the problem? Why should
@@ -224,8 +229,8 @@ yet?</p>
 <div class="admonition exercise">
 <p class="first admonition-title">Exercise</p>
 <p>Disable <code class="docutils literal"><span class="pre">ShareButton</span></code> by unchecking its Enabled checkbox in the Properties sidebar of the Designer interface. Then add another block to <code class="docutils literal"><span class="pre">Camera1.AfterPicture</span></code> that enables it.</p>
-<p class="last exercise-hint">
-<button>Hint</button><span class="hidden">You'll need to use the true block in the Logic group of the Blocks sidebar.</span></p></div>
+<div class="last exercise-hint">
+<button>Hint</button><div class="hidden hint-body">You'll need to use the <code class="docutils literal"><span class="pre">true</span></code> block in the Logic group of the Blocks sidebar.</div></div></div>
 <p>Hooray, now the Share button can't be clicked until after a picture has
 been taken! Now the <code class="docutils literal"><span class="pre">if</span></code> block inside of <code class="docutils literal"><span class="pre">ShareButton.Click</span></code> isn't
 even necessary anymore—you can safely get rid of it (but don't delete
@@ -302,7 +307,7 @@ programmers tend to have good job security ;-)</p>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
       <script type="text/javascript" src="../_static/jquery.fitvids.js"></script>
-      <script type="text/javascript" src="../_static/custom.js"></script>
+      <script type="text/javascript" src="../_static/tutorial.js"></script>
 
   
 

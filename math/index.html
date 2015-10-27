@@ -28,12 +28,12 @@
   
 
   
-    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tutorial.css" type="text/css" />
   
 
   
     <link rel="top" title="Mobile App Tutorial 0.1 documentation" href="../index.html"/>
-        <link rel="next" title="Appendix" href="../appendix/index.html"/>
+        <link rel="next" title="Canvas" href="../canvas/index.html"/>
         <link rel="prev" title="Camera" href="../camera/index.html"/> 
 
   
@@ -84,9 +84,14 @@
             
             
                 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements/index.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emulator-installation/index.html">Emulator Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../the-basics/index.html">The Basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../camera/index.html">Camera</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../canvas/index.html">Canvas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a></li>
 </ul>
 
@@ -169,8 +174,8 @@ to use a different math operator (e.g. <code class="docutils literal"><span clas
 <p>Even the best of us can make occasional errors in our arithmetic. Show a
 different note of encouragement if the player's answer is off by 1,
 perhaps: &quot;Your answer is not correct, but it's very close!&quot;</p>
-<p class="last exercise-hint">
-<button>Hint</button><span class="hidden">You will probably want to use a local variable, an else <code class="docutils literal"><span class="pre">if</span></code> block, and the <code class="docutils literal"><span class="pre">absolute</span></code> block.</span></p></div>
+<div class="last exercise-hint">
+<button>Hint</button><div class="hidden hint-body">You will probably want to use a local variable, an else <code class="docutils literal"><span class="pre">if</span></code> block, and the <code class="docutils literal"><span class="pre">absolute</span></code> block.</div></div></div>
 <p>When it comes to math, there is much more than just numerical
 computations. We can also use make a randomized word problem! Create a
 new project called &quot;Popejet&quot; and make the screen look like this:</p>
@@ -199,15 +204,16 @@ a <code class="docutils literal"><span class="pre">Screen1.Initialize</span></co
 <p>Add the logic in Blocks to check that the user submitted the correct
 answer to the problem. Keep this equation in mind as you figure out how
 to put together the blocks to compute the answer: <code class="docutils literal"><span class="pre">maxSpeed</span> <span class="pre">*</span> <span class="pre">timeInHours</span> <span class="pre">-</span> <span class="pre">missileRange</span> <span class="pre">=</span> <span class="pre">9850</span></code></p>
-<p class="last exercise-hint">
-<button>Hint</button><span class="hidden">To round to the nearest minute, you'll need to use the <code class="docutils literal"><span class="pre">round</span></code> block, found in the Math group.</span></p></div>
+<div class="last exercise-hint">
+<button>Hint</button><div class="hidden hint-body">To round to the nearest minute, you'll need to use the <code class="docutils literal"><span class="pre">round</span></code> block, found in the Math group.</div></div></div>
 <div class="admonition exercise">
 <p class="first admonition-title">Exercise</p>
 <p>Inside the <code class="docutils literal"><span class="pre">Screen1.Initialize</span></code> block you have a little bit of redundancy.
 Add a new procedure called <code class="docutils literal"><span class="pre">setDescriptionValue</span></code> that takes two
 inputs, <code class="docutils literal"><span class="pre">segment</span></code> and <code class="docutils literal"><span class="pre">replacement</span></code>, which can take the place of a <code class="docutils literal"><span class="pre">set</span> <span class="pre">DescriptionLabel.Text</span></code> block. It's not so bad in this program, but if you had a lot of variables in your description you would be very happy to have a procedure that does the heavy lifting for you!</p>
-<p class="last exercise-hint">
-<button>Hint</button><span class="hidden">This is how you would <a class="reference download internal" href="../_downloads/setDescriptionValue-block.png"><code class="xref download docutils literal"><span class="pre">start</span> <span class="pre">making</span> <span class="pre">the</span> <span class="pre">setDescriptionValue</span> <span class="pre">block</span></code></a>.</span></p></div>
+<div class="last exercise-hint">
+<button>Hint</button><div class="hidden hint-body"><p>This is how you would set up the <code class="docutils literal"><span class="pre">setDescriptionValue</span></code> block:</p>
+<img alt="../_images/setDescriptionValue-block.png" src="../_images/setDescriptionValue-block.png" /></div></div></div>
 <p>Congratulations, you've completed all of the core chapters in this
 tutorial. You can now do the other chapters in any order that you like,
 based on your own interest. You can also just start building your own
@@ -221,7 +227,7 @@ puzzle hunt!</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../appendix/index.html" class="btn btn-neutral float-right" title="Appendix" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../canvas/index.html" class="btn btn-neutral float-right" title="Canvas" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../camera/index.html" class="btn btn-neutral" title="Camera" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -264,7 +270,7 @@ puzzle hunt!</p>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
       <script type="text/javascript" src="../_static/jquery.fitvids.js"></script>
-      <script type="text/javascript" src="../_static/custom.js"></script>
+      <script type="text/javascript" src="../_static/tutorial.js"></script>
 
   
 
