@@ -1,5 +1,14 @@
+blockquote {
+  border-left: 5px solid #4A4A4A;
+  padding-left: 25px;
+}
+
 .hidden {
     display: none !important;
+}
+
+.fluid-width-video-wrapper {
+  margin: 32px 0;
 }
 
 .rst-content .exercise .admonition-title {
@@ -17,15 +26,14 @@
   margin-bottom: 0;
 }
 
-.exercise-hint button {
-  margin-right: 5px;
+.exercise-hint:not(.last) {
+  margin-bottom: 10px;
 }
 
-.fluid-width-video-wrapper {
-  margin: 32px 0;
+.exercise-hint.shown {
+  border: 1px dashed #4A4A4A;
 }
 
-blockquote {
-  border-left: 5px solid #4A4A4A;
-  padding-left: 20px;
+.exercise-hint .hint-body {
+  padding: 10px;
 }

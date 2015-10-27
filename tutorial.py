@@ -44,31 +44,29 @@ class ExerciseDirective(BaseAdmonition):
 
 ## exercisehint directive
 
-class exercisehint(nodes.Part, nodes.TextElement):
+class exercisehint(nodes.Body, nodes.TextElement):
     pass
 
 def visit_hint(self, node):
-    self.body.append(self.starttag(node, 'p', CLASS="exercise-hint") + \
-        '<button>Hint</button><span class="hidden">')
+    self.body.append(self.starttag(node, 'div', CLASS="exercise-hint") + \
+        '<button>Hint</button><div class="hidden hint-body">')
 
 def depart_hint(self, node):
-    self.body.append('</span></p>')
+    self.body.append('</div></div>')
 
 class ExerciseHintDirective(Directive):
-    has_content = False
-    required_arguments = 1
-    optional_arguments = 0
+    has_content = True
     final_argument_whitespace = True
     option_spec = {}
 
     def run(self):
-        if not self.arguments:
-            return []
-        subnode = exercisehint()
-        inodes, messages = self.state.inline_text(self.arguments[0],
-                                                  self.lineno)
-        subnode.extend(inodes)
-        return [subnode] + messages
+        self.assert_has_content()
+        text = '\n'.join(self.content)
+        eh_node = exercisehint(text)
+        self.add_name(eh_node)
+        self.state.nested_parse(self.content, self.content_offset, eh_node)
+        return [eh_node]
+
 
 ## youtube directive
 
