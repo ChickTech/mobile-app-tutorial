@@ -101,7 +101,7 @@ value yourself so that you know for certain what it is.
 
     Initialize global variable ``imageFile`` with an empty ``Text`` block (one that has no value). Also add a block to ``ShareButton.Click`` that prevents sharing from happening if the value of ``imageFile`` is empty text.
 
-    .. exercisehint:: At first, there doesn't seem to be an ≠ block, but if you drag the = block out you can use its dropdown to change it to an ≠ block.
+    .. exercisehint:: At first, there doesn't seem to be an ``≠`` block, but if you drag the ``=`` block out you can use its dropdown to change it to an ``≠`` block.
 
 Run your app now to verify that no error message appears when you press
 the Share button before taking a picture.
@@ -114,7 +114,7 @@ yet?
 
     Disable ``ShareButton`` by unchecking its Enabled checkbox in the Properties sidebar of the Designer interface. Then add another block to ``Camera1.AfterPicture`` that enables it.
 
-    .. exercisehint:: You'll need to use the true block in the Logic group of the Blocks sidebar.
+    .. exercisehint:: You'll need to use the ``true`` block in the Logic group of the Blocks sidebar.
 
 Hooray, now the Share button can't be clicked until after a picture has
 been taken! Now the ``if`` block inside of ``ShareButton.Click`` isn't
