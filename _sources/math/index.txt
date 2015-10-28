@@ -38,14 +38,7 @@ refresh.
 
   .. exercisehint:: You will probably want to use a local variable, an else ``if`` block, and the ``absolute`` block.
 
-When it comes to math, there is much more than just numerical
-computations. We can also use make a randomized word problem! Create a
-new project called "Popejet" and make the screen look like this:
-
-.. image:: popejet-designer.png
-
-The text is kinda long, so you might want to copy and paste it into App
-Inventor:
+App Inventor can be used for much more than just numerical computation problems. You can also use it to make randomized word problems! Here's the word problem we will implement:
 
     Godzilla has returned, and she's beating the crap out of Tokyo
     (again)! Unluckily for Tokyo, there isn't anyone around to stop her,
@@ -58,30 +51,39 @@ Inventor:
     between the Vatican and Tokyo is 9,850 km, how many minutes will it
     take for the Pope to get within targeting distance of Godzilla?
 
+Create a new project called "Popejet" and make the screen look like this:
+
+.. image:: popejet-designer.png
+
 Note here that we didn't split up the description into separate labels.
 This would be awkward because of how long the description label needs to
 be to hold all that text. Instead, you can put the variable names inside
-square brackets, and just replace the variables with their values inside
-a ``Screen1.Initialize`` block:
+square brackets, and then, inside the ``Screen1.Initialize`` block, replace the variable names with their numerical values:
 
 .. image:: popejet-blocks.png
 
+Run the app to see that both [maxSpeed] and [missileRange] are replaced with random numbers in the description label.
+
 .. exercise:: Add the logic in Blocks to check that the user submitted the correct
-  answer to the problem. Keep this equation in mind as you figure out how
-  to put together the blocks to compute the answer: ``maxSpeed * timeInHours - missileRange = 9850``
+  answer to the problem. To compute the answer, you need to consider this equation:
+
+  ``maxSpeed * timeInHours - missileRange = 9850``
+
+  .. exercisehint:: Don't forget to convert hours to minutes.
 
   .. exercisehint:: To round to the nearest minute, you'll need to use the ``round`` block, found in the Math group.
 
 .. exercise:: Inside the ``Screen1.Initialize`` block you have a little bit of redundancy.
   Add a new procedure called ``setDescriptionValue`` that takes two
-  inputs, ``segment`` and ``replacement``, which can take the place of a ``set DescriptionLabel.Text`` block. It's not so bad in this program, but if you had a lot of variables in your description you would be very happy to have a procedure that does the heavy lifting for you!
+  inputs, ``segment`` and ``replacement``, which can take the place of a ``set DescriptionLabel.Text`` block.
 
   .. exercisehint::
 
-    This is how you would set up the ``setDescriptionValue`` block:
+    This is how you would begin setting up the ``setDescriptionValue`` procedure block:
 
     .. image:: setDescriptionValue-block.png
 
+  .. exercisehint:: This exercise is quite similar to what you did when following the last video in :doc:`/the-basics/index`.
 
 Congratulations, you've completed all of the core chapters in this
 tutorial. You can now do the other chapters in any order that you like,

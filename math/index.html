@@ -176,12 +176,7 @@ different note of encouragement if the player's answer is off by 1,
 perhaps: &quot;Your answer is not correct, but it's very close!&quot;</p>
 <div class="last exercise-hint">
 <button>Hint</button><div class="hidden hint-body">You will probably want to use a local variable, an else <code class="docutils literal"><span class="pre">if</span></code> block, and the <code class="docutils literal"><span class="pre">absolute</span></code> block.</div></div></div>
-<p>When it comes to math, there is much more than just numerical
-computations. We can also use make a randomized word problem! Create a
-new project called &quot;Popejet&quot; and make the screen look like this:</p>
-<img alt="../_images/popejet-designer.png" src="../_images/popejet-designer.png" />
-<p>The text is kinda long, so you might want to copy and paste it into App
-Inventor:</p>
+<p>App Inventor can be used for much more than just numerical computation problems. You can also use it to make randomized word problems! Here's the word problem we will implement:</p>
 <blockquote>
 <div>Godzilla has returned, and she's beating the crap out of Tokyo
 (again)! Unluckily for Tokyo, there isn't anyone around to stop her,
@@ -193,27 +188,31 @@ speed of [maxSpeed] km/hr and air-to-surface missiles capable of
 hitting targets [missileRange] km away. Assuming the distance
 between the Vatican and Tokyo is 9,850 km, how many minutes will it
 take for the Pope to get within targeting distance of Godzilla?</div></blockquote>
+<p>Create a new project called &quot;Popejet&quot; and make the screen look like this:</p>
+<img alt="../_images/popejet-designer.png" src="../_images/popejet-designer.png" />
 <p>Note here that we didn't split up the description into separate labels.
 This would be awkward because of how long the description label needs to
 be to hold all that text. Instead, you can put the variable names inside
-square brackets, and just replace the variables with their values inside
-a <code class="docutils literal"><span class="pre">Screen1.Initialize</span></code> block:</p>
+square brackets, and then, inside the <code class="docutils literal"><span class="pre">Screen1.Initialize</span></code> block, replace the variable names with their numerical values:</p>
 <img alt="../_images/popejet-blocks.png" src="../_images/popejet-blocks.png" />
+<p>Run the app to see that both [maxSpeed] and [missileRange] are replaced with random numbers in the description label.</p>
 <div class="admonition exercise">
 <p class="first admonition-title">Exercise</p>
 <p>Add the logic in Blocks to check that the user submitted the correct
-answer to the problem. Keep this equation in mind as you figure out how
-to put together the blocks to compute the answer: <code class="docutils literal"><span class="pre">maxSpeed</span> <span class="pre">*</span> <span class="pre">timeInHours</span> <span class="pre">-</span> <span class="pre">missileRange</span> <span class="pre">=</span> <span class="pre">9850</span></code></p>
-<div class="last exercise-hint">
+answer to the problem. To compute the answer, you need to consider this equation:</p>
+<p><code class="docutils literal"><span class="pre">maxSpeed</span> <span class="pre">*</span> <span class="pre">timeInHours</span> <span class="pre">-</span> <span class="pre">missileRange</span> <span class="pre">=</span> <span class="pre">9850</span></code></p>
+<div class="exercise-hint">
+<button>Hint</button><div class="hidden hint-body">Don't forget to convert hours to minutes.</div></div><div class="last exercise-hint">
 <button>Hint</button><div class="hidden hint-body">To round to the nearest minute, you'll need to use the <code class="docutils literal"><span class="pre">round</span></code> block, found in the Math group.</div></div></div>
 <div class="admonition exercise">
 <p class="first admonition-title">Exercise</p>
 <p>Inside the <code class="docutils literal"><span class="pre">Screen1.Initialize</span></code> block you have a little bit of redundancy.
 Add a new procedure called <code class="docutils literal"><span class="pre">setDescriptionValue</span></code> that takes two
-inputs, <code class="docutils literal"><span class="pre">segment</span></code> and <code class="docutils literal"><span class="pre">replacement</span></code>, which can take the place of a <code class="docutils literal"><span class="pre">set</span> <span class="pre">DescriptionLabel.Text</span></code> block. It's not so bad in this program, but if you had a lot of variables in your description you would be very happy to have a procedure that does the heavy lifting for you!</p>
-<div class="last exercise-hint">
-<button>Hint</button><div class="hidden hint-body"><p>This is how you would set up the <code class="docutils literal"><span class="pre">setDescriptionValue</span></code> block:</p>
-<img alt="../_images/setDescriptionValue-block.png" src="../_images/setDescriptionValue-block.png" /></div></div></div>
+inputs, <code class="docutils literal"><span class="pre">segment</span></code> and <code class="docutils literal"><span class="pre">replacement</span></code>, which can take the place of a <code class="docutils literal"><span class="pre">set</span> <span class="pre">DescriptionLabel.Text</span></code> block.</p>
+<div class="exercise-hint">
+<button>Hint</button><div class="hidden hint-body"><p>This is how you would begin setting up the <code class="docutils literal"><span class="pre">setDescriptionValue</span></code> procedure block:</p>
+<img alt="../_images/setDescriptionValue-block.png" src="../_images/setDescriptionValue-block.png" /></div></div><div class="last exercise-hint">
+<button>Hint</button><div class="hidden hint-body">This exercise is quite similar to what you did when following the last video in <a class="reference internal" href="../the-basics/index.html"><em>The Basics</em></a>.</div></div></div>
 <p>Congratulations, you've completed all of the core chapters in this
 tutorial. You can now do the other chapters in any order that you like,
 based on your own interest. You can also just start building your own
