@@ -136,7 +136,11 @@ they appear on a website. You decide you want to submit a line from *Nausicaä o
 
 So you assemble a URL that looks like this:
 
-http://film-quotes.com/api/?movie=Nausicaä of the Valley of the Wind&quote=Even the topsoil is in our valley is polluted. But… I don't understand. Who could have polluted the entire earth?
+.. raw:: html
+
+  <p>
+  http://film-quotes.com/api/?<span style="color:red">movie</span>=<span style="color:blue;font-weight:bold;">Nausicaä of the Valley of the Wind</span>&amp;<span style="color:red">quote</span>=<span style="color:blue;font-weight:bold;">Even the topsoil is in our valley is polluted. But… I don't understand. Who could have polluted the entire earth?</span></strong>
+  </p>
 
 Unfortunately, this is not going to work, because only certain
 characters are allowed in URLs, and your quote uses many that aren't
@@ -144,7 +148,11 @@ allowed. You have to encode the URL in a special format so that the
 server can receive the text properly. When encoded correctly, the URL
 should look like this:
 
-http://film-quotes.com/api/?character=Nausica%C3%A4&quote=Even+the+topsoil+is+in+our+valley+is+polluted.+But%E2%80%A6+I+don%27t+understand.+Who+could+have+polluted+the+entire+earth%3F
+.. raw:: html
+
+  <p>
+  http://film-quotes.com/api/?<span style="color:red">movie</span>=<span style="color:blue;font-weight:bold;">Nausica%C3%A4+of+the+Valley+of+the+Wind</span>&amp;<span style="color:red">quote</span>=<span style="color:blue;font-weight:bold;">Even+the+topsoil+is+in+our+valley+is+polluted.+But%E2%80%A6+I+don%27t+understand.+Who+could+have+polluted+the+entire+earth%3F</span>
+  </p>
 
 Fortunately, the ``Web.BuildRequestData`` block can be used to encode
 the query string part of your URL. To properly build the URL in the
@@ -154,7 +162,6 @@ this:
 .. image:: buildrequestdata.png
 
 Note that ``Web.BuildRequestData`` accepts a list of lists.
-
 
 .. exercise:: Change how the URL is assembled so that you're using ``Web1.BuildRequestData`` to create the query string portion of the URL.
 
