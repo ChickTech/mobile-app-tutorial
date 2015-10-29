@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>QR Code &mdash; Mobile App Tutorial 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/tutorial.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Mobile App Tutorial 0.1 documentation" href="../index.html"/>
+        <link rel="next" title="Networking" href="../networking/index.html"/>
+        <link rel="prev" title="Canvas" href="../canvas/index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Mobile App Tutorial
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements/index.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emulator-installation/index.html">Emulator Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../the-basics/index.html">The Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../camera/index.html">Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/index.html">Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../canvas/index.html">Canvas</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">QR Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../networking/index.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Mobile App Tutorial</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>QR Code</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/qr-code/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="qr-code">
+<h1>QR Code<a class="headerlink" href="#qr-code" title="Permalink to this headline">¶</a></h1>
+<p>A QR code is similar to a barcode, and like a barcode, can encode all
+kinds of text. When making a puzzle hunt, you can stick QR codes in
+designated places so that players can scan them for clues, hints,
+directions, or any kind of information that you wish to share. In this
+tutorial, you will learn how to scan QR codes.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can learn about how to generate your own QR codes in the <code class="xref doc docutils literal"><span class="pre">Server</span> <span class="pre">chapter</span></code>.</p>
+</div>
+<p>Download <a class="reference download internal" href="../_downloads/QRCode.aia"><code class="xref download docutils literal"><span class="pre">QRCode.aia</span></code></a> and <code class="xref doc docutils literal"><span class="pre">import</span> <span class="pre">it</span> <span class="pre">into</span> <span class="pre">App</span> <span class="pre">Inventor</span></code>. The screen will look like this:</p>
+<img alt="../_images/qr-code-interface.png" src="../_images/qr-code-interface.png" />
+<p>Now drag a <code class="docutils literal"><span class="pre">BarcodeScanner</span></code> (from the Sensors section) into the
+screen, and make sure to uncheck the &quot;UseExternalScanner&quot; checkbox.</p>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p>Make it so that clicking the Scan button triggers a scan, and that the result of the scan is shown by <code class="docutils literal"><span class="pre">ScanResultLabel</span></code>.</p>
+<div class="last exercise-hint">
+<button>Hint</button><div class="hidden hint-body">If you get an error that says &quot;Error 1501: Your device does not have a scanning application installed&quot;, it means you forgot to uncheck &quot;UseExternalScanner&quot;.</div></div></div>
+<p>Run the app in your phone, and then use it to scan this QR code:</p>
+<img src="../_images/hello.svg" /><p>The <code class="docutils literal"><span class="pre">BarCodeScanner</span></code> component can convert any valid barcode or QR
+code to its underlying text. Sometimes this underlying text is actually
+the URL of a web page. For example, this one:</p>
+<img src="../_images/cats-url.svg" /><div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p>Fix the app so that after you scan a QR code containing a URL, you can click the &quot;Open web page&quot; button to open the URL in the browser on your phone.</p>
+<div class="last exercise-hint">
+<button>Hint</button><div class="hidden hint-body">You'll want to set <code class="docutils literal"><span class="pre">ActivityStarter1.DataUri</span></code> to be the URL you want to open.</div></div></div>
+<p>Run the app and open the scanned URL in your phone's browser (or any app
+capable of opening a URL). Hooray! Now you can leave QR codes around the
+house so that your family members or roommates can scan them and get
+their daily dose of funny cat GIFs.</p>
+<p>You may have noticed that we used a new component called
+<code class="docutils literal"><span class="pre">ActivityStarter</span></code>. This component is used to open other apps on your
+phone while also sending them relevant data. In the previous example, we
+told the Android operating system that we wanted to view
+<code class="docutils literal"><span class="pre">https://media3.giphy.com/media/iACp2LfrWulcQ/giphy.gif</span></code> using another
+app. By default your system will ask you if you want to view it in
+Chrome, but it's possible to override this.</p>
+<p>But wait, have you noticed that there's a bug in your program? See what
+happens if you scan the first QR code, then click the &quot;Open web page&quot;
+button.</p>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p>Fix the bug so that if you scan a QR code that doesn't convert to a URL, the &quot;Open web page&quot; button is disabled.</p>
+<div class="exercise-hint">
+<button>Hint</button><div class="hidden hint-body">All URLs start with &quot;http&quot;.</div></div><div class="last exercise-hint">
+<button>Hint</button><div class="hidden hint-body">You'll have to use the <code class="docutils literal"><span class="pre">starts</span> <span class="pre">at</span></code> block. It might help to consult the <a class="reference external" href="http://appinventor.mit.edu/explore/ai2/support/blocks/text.html#startsat">official documentation on this text block</a>.</div></div></div>
+<p>Excelsior! In this chapter, you learned about QR codes and how they can
+be used to direct users to amusing cat animations. You are one step
+closer to becoming Lord of the Infinite!</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../networking/index.html" class="btn btn-neutral float-right" title="Networking" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../canvas/index.html" class="btn btn-neutral" title="Canvas" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/jquery.fitvids.js"></script>
+      <script type="text/javascript" src="../_static/tutorial.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
