@@ -154,6 +154,15 @@ should look like this:
   http://film-quotes.com/api/?<span style="color:red">movie</span>=<span style="color:blue;font-weight:bold;">Nausica%C3%A4+of+the+Valley+of+the+Wind</span>&amp;<span style="color:red">quote</span>=<span style="color:blue;font-weight:bold;">Even+the+topsoil+is+in+our+valley+is+polluted.+But%E2%80%A6+I+don%27t+understand.+Who+could+have+polluted+the+entire+earth%3F</span>
   </p>
 
+.. How to generate the above query string:
+
+  python3 -c "import urllib.parse
+  d = dict(
+    movie='Nausicaä of the Valley of the Wind',
+    quote='Even the topsoil is in our valley is polluted. But… I don\'t understand. Who could have polluted the entire earth?'
+  )
+  print(urllib.parse.urlencode(d))"
+
 Fortunately, the ``Web.BuildRequestData`` block can be used to encode
 the query string part of your URL. To properly build the URL in the
 previous example, you would assemble your blocks like
