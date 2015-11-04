@@ -78,6 +78,8 @@ would do something like this:
 
 .. exercise:: Add a new label beneath ``QuoteLabel`` called ``AuthorLabel``. Make it so that your app looks like this:
 
+  .. image:: design-is-easy.png
+
   .. exercisehint:: You will want to use the ``initialize local`` block to avoid needless redundancy.
 
   .. exercisehint:: To put the dash at the front in ``AuthorLabel``, use the ``join`` block in the Text group.
