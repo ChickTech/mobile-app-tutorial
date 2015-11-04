@@ -1,0 +1,309 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Location &mdash; Mobile App Tutorial 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/tutorial.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Mobile App Tutorial 0.1 documentation" href="../index.html"/>
+        <link rel="next" title="Appendix" href="../appendix/index.html"/>
+        <link rel="prev" title="Networking" href="../networking/index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Mobile App Tutorial
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements/index.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emulator-installation/index.html">Emulator Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../the-basics/index.html">The Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../camera/index.html">Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/index.html">Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../canvas/index.html">Canvas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qr-code/index.html">QR Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../networking/index.html">Networking</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Location</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Mobile App Tutorial</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Location</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/location/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="location">
+<h1>Location<a class="headerlink" href="#location" title="Permalink to this headline">¶</a></h1>
+<p>Imagine that you are an app inventor living in MacEnrique, IL. Your housemate PJ has an interesting problem: whenever there's a full moon she turns into a werewolf and runs all over town terrorizing rabbits, squirrels, and other small animals. After a full night of being a werewolf, PJ usually wakes up in a random place with no memory of how she got there. In addition, she also has a huge craving for waffles <a class="footnote-reference" href="#id4" id="id1">[1]</a>. Knowing that you're an app inventor, she asks you to make an app to help her out.</p>
+<p>Download <a class="reference download internal" href="../_downloads/WerewolfAssistant.aia"><code class="xref download docutils literal"><span class="pre">WerewolfAssistant.aia</span></code></a> and <a class="reference internal" href="../appendix/importing-projects/index.html"><em>import it into App Inventor</em></a>. The screen will look like this:</p>
+<img alt="../_images/werewolf-assistant-screen.png" src="../_images/werewolf-assistant-screen.png" />
+<p>Drag a <code class="docutils literal"><span class="pre">LocationSensor</span></code> component from the Sensors section into the screen, and then add a <code class="docutils literal"><span class="pre">LocationSensor1.LocationChanged</span></code> block to your program. This block will be executed whenever <code class="docutils literal"><span class="pre">LocationSensor1</span></code> receives new location data. If your Android device does not have a SIM card, make sure to turn on the GPS or <code class="docutils literal"><span class="pre">LocationSensor.LocationChanged</span></code> will probably never be executed.</p>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p>Change the program so that whenever new location data is received, <code class="docutils literal"><span class="pre">CoordinatesLabel</span></code> will be updated with the latitude and longitude.</p>
+<div class="last exercise-hint">
+<button>Hint</button><div class="hidden hint-body">You will need to use a <code class="docutils literal"><span class="pre">join</span></code> block (found in Text group).</div></div></div>
+<p>If you are doing this tutorial on a device that doesn't have a SIM card, it might take a pretty long time for your phone to get the location. Let's make your phone vibrate every time the location changes so you're not staring at your phone for a whole minute.</p>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p class="last">Drag a <code class="docutils literal"><span class="pre">Sound</span></code> component into your screen in Designer. In Blocks, add a block so that your phone vibrates for a second when the location changes.</p>
+</div>
+<p>PJ thinks it's nice that the app shows her coordinates, but since she never knows where she is when she wakes up, what she really wants to see is a map. Of course, every smartphone has a map application, so App Inventor helpfully gives you the ability to open up and send data to an external map application.</p>
+<p>Note that there is already an <code class="docutils literal"><span class="pre">ActivityStarter</span></code> component in the project. Its <code class="docutils literal"><span class="pre">Action</span></code> property is already set to &quot;android.intent.action.VIEW&quot;, which is a code that tells Android OS that we want to view something in another app. But we also need to set the <code class="docutils literal"><span class="pre">DataUri</span></code> property, which needs to contain the coordinates we want to view. Android OS expects a certain format for geographical data. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>geo:41.963,-87.684
+</pre></div>
+</div>
+<p>That is, the coordinate format is the text &quot;geo:&quot;, followed by the latitude, followed by a comma, and ending with the longitude.</p>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p>Fix the app so that when you click the &quot;Open map&quot; button, your app will open a map to your current location.</p>
+<div class="last exercise-hint">
+<button>Hint</button><div class="hidden hint-body">You'll probably want to make use of global variables.</div></div></div>
+<p>Run your app to see your current location on the map. Pretty sweet, huh?</p>
+<p>PJ is pretty impressed with your app inventing skills, but she says she doesn't only want to know where she is, she also wants to know the closest waffle restaurants so that she can satiate her incredible hunger for waffles. Fortunately, you can add a keyword to geographical data. Like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>geo:41.963,-87.684?q=coffee
+</pre></div>
+</div>
+<p>The above value would cause locations near (41.963, -87.684) that match the search term &quot;coffee&quot; to be marked on the map.</p>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p>Change your program so that clicking on the &quot;Open Map&quot; button shows a map with all the nearby waffle places marked.</p>
+<div class="last exercise-hint">
+<button>Hint</button><div class="hidden hint-body">Using the keyword &quot;waffle&quot; is probably sufficient. If you use &quot;waffle house&quot;, that might exclude some breakfast places that serve waffles but aren't specifically waffle houses.</div></div></div>
+<p>After PJ eats her fill of waffles, she wants to immediately go home so that she can take a shower. Fortunately, there is a way to show an arbitrary address on a map. The two most important blocks for doing this are <code class="docutils literal"><span class="pre">LocationSensor.LatitudeFromAddress</span></code> and <code class="docutils literal"><span class="pre">LocationSensor.LongitudeFromAddress</span></code>.</p>
+<p>Add a new button so that your screen now looks like this:</p>
+<img alt="../_images/add-home-button.png" src="../_images/add-home-button.png" />
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p class="last">Make it so that clicking <code class="docutils literal"><span class="pre">HomeButton</span></code> shows the map to PJ's house. You can use &quot;4455 N Lincoln Ave, Chicago, IL&quot; for the address, but feel free to use any address that you know exists.</p>
+</div>
+<p>PJ says the &quot;Show map for home&quot; button is fabulous, but wonders if you could make it show the directions instead of a plain map view. Luckily, there is a way to tell Android OS that you want directions to a particular address. You have to use a different format for the <code class="docutils literal"><span class="pre">ActivityStarter.DataUri</span></code> property, which will look something like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>google.navigation:q=4455+N+Lincoln+Ave,+Chicago,+IL&amp;mode=w
+</pre></div>
+</div>
+<p>The wrinkle to this format is that any space in the address has to be replaced with &quot;+&quot;. Also, the &quot;mode=w&quot; indicates that we want walking directions <a class="footnote-reference" href="#id5" id="id2">[2]</a>.</p>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p class="last">Change the text of <code class="docutils literal"><span class="pre">HomeButton</span></code> to &quot;Directions to home&quot; and modify your blocks so that clicking <code class="docutils literal"><span class="pre">HomeButton</span></code> shows the directions to PJ's home address.</p>
+</div>
+<p>Pj is a musician, and sometimes will go on tour for months at a time with her folk punk band <a class="footnote-reference" href="#id6" id="id3">[3]</a>. She needs the ability to change the home address in case she happens to be out of town when there's a full moon.</p>
+<p>Add a new button whose text is &quot;Change home address&quot;. Your screen should look like this:</p>
+<img alt="../_images/add-change-address-button.png" src="../_images/add-change-address-button.png" />
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p>Change your program so that clicking <code class="docutils literal"><span class="pre">ChangeAddressButton</span></code> will call <code class="docutils literal"><span class="pre">Notifier1.ShowTextDialog</span></code> to ask the user to enter an address. Once you've filled out an address, clicking <code class="docutils literal"><span class="pre">HomeButton</span></code> should give you directions to the new address.</p>
+<div class="exercise-hint">
+<button>Hint</button><div class="hidden hint-body">You'll need to add a new global variable to store the home address.</div></div><div class="exercise-hint">
+<button>Hint</button><div class="hidden hint-body">You'll need to add the <code class="docutils literal"><span class="pre">Notifier.AfterTextInput</span></code> block.</div></div><div class="last exercise-hint">
+<button>Hint</button><div class="hidden hint-body">Remember to replace spaces with pluses.</div></div></div>
+<p>Alright! Run the app again to see that changing the home address causes the directions to show a different starting point. However, there is a small problem. Refresh your app and see what happens when you click on <code class="docutils literal"><span class="pre">HomeButton</span></code>. It didn't remember the new home address! Or maybe complained with the error &quot;Can't find destination&quot;.</p>
+<p>Variables only exist as long as an app is running. When you restart an app, all the variables are recreated from scratch. In order for your app to persist data, you must rely on a database. App Inventor provides a database in the form of the <code class="docutils literal"><span class="pre">TinyDB</span></code> component, available in the Storage group.</p>
+<p>Drag a <code class="docutils literal"><span class="pre">TinyDB</span></code> into your screen and then  add these blocks to your program:</p>
+<img alt="../_images/tinydb-getvalue.png" src="../_images/tinydb-getvalue.png" />
+<p>Your homeAddress global variable is initialized to &quot;&quot; but after the screen initializes it will be set to the value  returned by <code class="docutils literal"><span class="pre">TinyDB1.GetValue</span></code>.</p>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p>Fix your program so that after you enter the address, the value gets stored in the database under the tag &quot;homeAddress&quot; so that it isn't lost when the app is closed.</p>
+<div class="last exercise-hint">
+<button>Hint</button><div class="hidden hint-body">You'll need to use the <code class="docutils literal"><span class="pre">TinyDB1.SetValue</span></code> block.</div></div></div>
+<p>Subarashii! In this chapter, you learned about the <cite>LocationSensor</cite> component, how to open a map to your current location, how to open a map to an arbitrary address, how to display directions to an address, and how to use the TinyDb component. You are one step closer to becoming the Mikado of Zen!</p>
+<p>Remember to use more footnotes!</p>
+<p class="rubric">Footnotes</p>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>&quot;Post-transformation waffle hunger&quot; is a well-documented phenomenon among lycanthropes.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>If you want driving directions, you would use &quot;d&quot;. See <a class="reference external" href="https://developers.google.com/maps/documentation/android-api/intents">Google Maps Android API</a> for more details.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id6" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td>The name of PJ's band is The Waffling Werewolves.</td></tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../appendix/index.html" class="btn btn-neutral float-right" title="Appendix" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../networking/index.html" class="btn btn-neutral" title="Networking" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/jquery.fitvids.js"></script>
+      <script type="text/javascript" src="../_static/tutorial.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

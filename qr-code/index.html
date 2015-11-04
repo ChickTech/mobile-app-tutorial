@@ -94,6 +94,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../canvas/index.html">Canvas</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">QR Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../networking/index.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../location/index.html">Location</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a></li>
 </ul>
 
@@ -141,55 +142,59 @@
             
   <div class="section" id="qr-code">
 <h1>QR Code<a class="headerlink" href="#qr-code" title="Permalink to this headline">¶</a></h1>
-<p>A QR code is similar to a barcode, and like a barcode, can encode all
-kinds of text. When making a puzzle hunt, you can stick QR codes in
-designated places so that players can scan them for clues, hints,
-directions, or any kind of information that you wish to share. In this
-tutorial, you will learn how to scan QR codes.</p>
+<p>Imagine you are an app inventor living in Kevinston, IL. Sandra, the town riddlemaster, is organizing the annual Kevinston Riddle Hunt. Being a tech-savvy riddlemaster, she has decided to encode her riddles into QR codes and put them all over town. She has also decided to create an app that riddle hunters can use to scan the QR codes and display the scan results.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">You can learn about how to generate your own QR codes in the <code class="xref doc docutils literal"><span class="pre">Server</span> <span class="pre">chapter</span></code>.</p>
+<p class="last">Note: QR code is short for Quick Response Code, and is essentially a two-dimensional barcode. Like any barcode, it can encode any kind of textual information and is easily scanned by machines. You can learn how to generate your own QR codes in the <code class="xref doc docutils literal"><span class="pre">Server</span> <span class="pre">chapter</span></code>.</p>
 </div>
-<p>Download <a class="reference download internal" href="../_downloads/QRCode.aia"><code class="xref download docutils literal"><span class="pre">QRCode.aia</span></code></a> and <code class="xref doc docutils literal"><span class="pre">import</span> <span class="pre">it</span> <span class="pre">into</span> <span class="pre">App</span> <span class="pre">Inventor</span></code>. The screen will look like this:</p>
-<img alt="../_images/qr-code-interface.png" src="../_images/qr-code-interface.png" />
+<p>Sandra has already started the app on her own, but she's too busy with her other duties to keep working on it, so she commissions you to complete the app. Download <a class="reference download internal" href="../_downloads/RiddleHunter.aia"><code class="xref download docutils literal"><span class="pre">RiddleHunter.aia</span></code></a> and <a class="reference internal" href="../appendix/importing-projects/index.html"><em>import it into App Inventor</em></a>. The screen should look like this:</p>
+<img alt="../_images/riddle-hunter-interface.png" src="../_images/riddle-hunter-interface.png" />
 <p>Now drag a <code class="docutils literal"><span class="pre">BarcodeScanner</span></code> (from the Sensors section) into the
-screen, and make sure to uncheck the &quot;UseExternalScanner&quot; checkbox.</p>
+screen, and <strong>make sure to uncheck</strong> the &quot;UseExternalScanner&quot; checkbox.</p>
 <div class="admonition exercise">
 <p class="first admonition-title">Exercise</p>
 <p>Make it so that clicking the Scan button triggers a scan, and that the result of the scan is shown by <code class="docutils literal"><span class="pre">ScanResultLabel</span></code>.</p>
-<div class="last exercise-hint">
-<button>Hint</button><div class="hidden hint-body">If you get an error that says &quot;Error 1501: Your device does not have a scanning application installed&quot;, it means you forgot to uncheck &quot;UseExternalScanner&quot;.</div></div></div>
+<div class="exercise-hint">
+<button>Hint</button><div class="hidden hint-body">If you get an error that says &quot;Error 1501: Your device does not have a scanning application installed&quot;, it means you forgot to uncheck &quot;UseExternalScanner&quot;.</div></div><div class="last exercise-hint">
+<button>Hint</button><div class="hidden hint-body">Scanning is a two-part process: first the user has to click the Scan button to initialize the scanning screen, and then she has to aim her camera at a valid barcode. You'll need to use two <code class="docutils literal"><span class="pre">when</span></code> blocks to implement the whole process.</div></div></div>
 <p>Run the app in your phone, and then use it to scan this QR code:</p>
-<img src="../_images/hello.svg" /><p>The <code class="docutils literal"><span class="pre">BarCodeScanner</span></code> component can convert any valid barcode or QR
-code to its underlying text. Sometimes this underlying text is actually
-the URL of a web page. For example, this one:</p>
-<img src="../_images/cats-url.svg" /><div class="admonition exercise">
-<p class="first admonition-title">Exercise</p>
-<p>Fix the app so that after you scan a QR code containing a URL, you can click the &quot;Open web page&quot; button to open the URL in the browser on your phone.</p>
-<div class="last exercise-hint">
-<button>Hint</button><div class="hidden hint-body">You'll want to set <code class="docutils literal"><span class="pre">ActivityStarter1.DataUri</span></code> to be the URL you want to open.</div></div></div>
-<p>Run the app and open the scanned URL in your phone's browser (or any app
-capable of opening a URL). Hooray! Now you can leave QR codes around the
-house so that your family members or roommates can scan them and get
-their daily dose of funny cat GIFs.</p>
-<p>You may have noticed that we used a new component called
-<code class="docutils literal"><span class="pre">ActivityStarter</span></code>. This component is used to open other apps on your
-phone while also sending them relevant data. In the previous example, we
-told the Android operating system that we wanted to view
-<code class="docutils literal"><span class="pre">https://media3.giphy.com/media/iACp2LfrWulcQ/giphy.gif</span></code> using another
-app. By default your system will ask you if you want to view it in
-Chrome, but it's possible to override this.</p>
-<p>But wait, have you noticed that there's a bug in your program? See what
-happens if you scan the first QR code, then click the &quot;Open web page&quot;
-button.</p>
+<img src="../_images/riddle-1.svg" /><p>Sandra likes what she sees so far, but she says that some of her QR codes contain URLs instead of plain text. In that case, the app shouldn't just show the URL, it should also automatically open the browser to that URL. Here's an example of a QR code that encodes a URL:</p>
+<img src="../_images/riddle-2.svg" /><p>In order for us to be able to process a URL, we must add some logic to check whether a scan result is actually a URL as opposed to just plain text. Fortunately, URLs are pretty distinctive—they always start with either &quot;<a class="reference external" href="http://">http://</a>&quot; or &quot;<a class="reference external" href="https://">https://</a>&quot;. In order to check whether some text starts with some other text, you need to use the <code class="docutils literal"><span class="pre">starts</span> <span class="pre">at</span></code> block. Here's an example of its usage:</p>
+<img alt="../_images/starts-at-example-1.png" src="../_images/starts-at-example-1.png" />
+<p><code class="docutils literal"><span class="pre">TestLabel</span></code> will display &quot;3&quot;, because &quot;phib&quot; starts at the third character of &quot;amphibian&quot;. However, if you try this:</p>
+<img alt="../_images/starts-at-example-2.png" src="../_images/starts-at-example-2.png" />
+<p>You'll find that <code class="docutils literal"><span class="pre">TestLabel</span></code> displays &quot;0&quot;, because &quot;bean&quot; does not appear at inside &quot;amphibian&quot;.</p>
+<p>What we'd like to do is have a <code class="docutils literal"><span class="pre">startsWith</span></code> procedure with two inputs, <code class="docutils literal"><span class="pre">text</span></code> and <code class="docutils literal"><span class="pre">piece</span></code> (echoing the two inputs of the <code class="docutils literal"><span class="pre">starts</span> <span class="pre">at</span></code> block). You would be able to use it like this:</p>
+<img alt="../_images/startsWith-examples.png" src="../_images/startsWith-examples.png" />
+<p>Here is how you would start defining the <code class="docutils literal"><span class="pre">startsWith</span></code> procedure block:</p>
+<img alt="../_images/startsWith-definition.png" src="../_images/startsWith-definition.png" />
+<p>Note that we are using a different procedure block than we used in <a class="reference internal" href="../the-basics/index.html"><em>the first chapter</em></a>. It has a <code class="docutils literal"><span class="pre">result</span></code> input that indicates this procedure will return a value. In the case of <code class="docutils literal"><span class="pre">startsWith</span></code>, it will return either <code class="docutils literal"><span class="pre">true</span></code> or <code class="docutils literal"><span class="pre">false</span></code> depending on what inputs it is given.</p>
 <div class="admonition exercise">
 <p class="first admonition-title">Exercise</p>
-<p>Fix the bug so that if you scan a QR code that doesn't convert to a URL, the &quot;Open web page&quot; button is disabled.</p>
-<div class="exercise-hint">
-<button>Hint</button><div class="hidden hint-body">All URLs start with &quot;http&quot;.</div></div><div class="last exercise-hint">
-<button>Hint</button><div class="hidden hint-body">You'll have to use the <code class="docutils literal"><span class="pre">starts</span> <span class="pre">at</span></code> block. It might help to consult the <a class="reference external" href="http://appinventor.mit.edu/explore/ai2/support/blocks/text.html#startsat">official documentation on this text block</a>.</div></div></div>
-<p>Excelsior! In this chapter, you learned about QR codes and how they can
-be used to direct users to amusing cat animations. You are one step
+<p>Complete the <code class="docutils literal"><span class="pre">startsWith</span></code> procedure, and then add these blocks to the inside of the <code class="docutils literal"><span class="pre">BarcodeScanner1.AfterScan</span></code> block:</p>
+<img alt="../_images/set-TestLabel-Text.png" class="last" src="../_images/set-TestLabel-Text.png" />
+</div>
+<p>Run your app to see that <code class="docutils literal"><span class="pre">TestLabel</span></code> shows true if the scan result is a URL, but false if it is not a URL.</p>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p>Now you are ready to create another procedure called <code class="docutils literal"><span class="pre">isURL</span></code>. This procedure will take a text block as input, and will return <code class="docutils literal"><span class="pre">true</span></code> if it's a URL and <code class="docutils literal"><span class="pre">false</span></code> otherwise. You can test that your procedure works by scanning these two codes:</p>
+<ul class="last simple">
+<li><a class="reference download internal" href="../_downloads/http-code.svg"><code class="xref download docutils literal"><span class="pre">A</span> <span class="pre">QR</span> <span class="pre">code</span> <span class="pre">that</span> <span class="pre">encodes</span> <span class="pre">a</span> <span class="pre">URL</span> <span class="pre">starting</span> <span class="pre">with</span> <span class="pre">&quot;http://&quot;</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/https-code.svg"><code class="xref download docutils literal"><span class="pre">A</span> <span class="pre">QR</span> <span class="pre">code</span> <span class="pre">that</span> <span class="pre">encodes</span> <span class="pre">a</span> <span class="pre">URL</span> <span class="pre">starting</span> <span class="pre">with</span> <span class="pre">&quot;https://&quot;</span></code></a></li>
+</ul>
+</div>
+<p>Now we need to turn our attention to how to open URLs in the browser. From the Connectivity section, drag an <code class="docutils literal"><span class="pre">ActivityStarter</span></code> into your screen. This component is used to open other apps on your
+phone while also sending them relevant data. Now create a new procedure called <code class="docutils literal"><span class="pre">openURL</span></code>, which will can be defined like this:</p>
+<img alt="../_images/openURL-definition.png" src="../_images/openURL-definition.png" />
+<p>This procedure sets <code class="docutils literal"><span class="pre">ActivityStarter1.Action</span></code> to &quot;android.intent.action.VIEW&quot;, which tells Android OS that you want to view something. The <code class="docutils literal"><span class="pre">ActivityStarter1.DataUri</span></code> property is used to tell Android OS what we want to view—in this case, we set it to <code class="docutils literal"><span class="pre">url</span></code>, which is an input variable representing the URL. When <code class="docutils literal"><span class="pre">ActivityStarter1.StartActivity</span></code> is called, your phone will ask you if you want to view the URL in
+Chrome, but it's possible to override this (perhaps with another browser you've installed on your phone).</p>
+<div class="admonition exercise">
+<p class="first admonition-title">Exercise</p>
+<p class="last">Change the app so that after scanning a QR code containing a URL, it will open that URL in the browser. Do not open the browser if the QR code does not contain a URL.</p>
+</div>
+<p>Run the app and open the some URLs in your phone's browser (or any app
+capable of opening a URL). Hooray! Now Sandra's RiddleHunter app is finally complete.</p>
+<p>Excelsior! In this chapter, you learned about QR codes, using <code class="docutils literal"><span class="pre">ActivityStarter</span></code> to open URLs in another app, and <code class="docutils literal"><span class="pre">starts</span> <span class="pre">at</span></code>. You also got more practice with defining and using procedures. You are one step
 closer to becoming Lord of the Infinite!</p>
 </div>
 

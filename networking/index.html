@@ -33,7 +33,7 @@
 
   
     <link rel="top" title="Mobile App Tutorial 0.1 documentation" href="../index.html"/>
-        <link rel="next" title="Appendix" href="../appendix/index.html"/>
+        <link rel="next" title="Location" href="../location/index.html"/>
         <link rel="prev" title="QR Code" href="../qr-code/index.html"/> 
 
   
@@ -94,6 +94,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../canvas/index.html">Canvas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../qr-code/index.html">QR Code</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../location/index.html">Location</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a></li>
 </ul>
 
@@ -205,6 +206,7 @@ would do something like this:</p>
 <div class="admonition exercise">
 <p class="first admonition-title">Exercise</p>
 <p>Add a new label beneath <code class="docutils literal"><span class="pre">QuoteLabel</span></code> called <code class="docutils literal"><span class="pre">AuthorLabel</span></code>. Make it so that your app looks like this:</p>
+<img alt="../_images/design-is-easy.png" src="../_images/design-is-easy.png" />
 <div class="exercise-hint">
 <button>Hint</button><div class="hidden hint-body">You will want to use the <code class="docutils literal"><span class="pre">initialize</span> <span class="pre">local</span></code> block to avoid needless redundancy.</div></div><div class="last exercise-hint">
 <button>Hint</button><div class="hidden hint-body">To put the dash at the front in <code class="docutils literal"><span class="pre">AuthorLabel</span></code>, use the <code class="docutils literal"><span class="pre">join</span></code> block in the Text group.</div></div></div>
@@ -253,14 +255,16 @@ they appear on a website. You decide you want to submit a line from <em>Nausica�
 <div>Even the topsoil in our valley is polluted. But… I don't
 understand. Who could have polluted the entire earth?</div></blockquote>
 <p>So you assemble a URL that looks like this:</p>
-<p><a class="reference external" href="http://film-quotes.com/api/">http://film-quotes.com/api/</a>?movie=Nausicaä of the Valley of the Wind&amp;quote=Even the topsoil is in our valley is polluted. But… I don't understand. Who could have polluted the entire earth?</p>
-<p>Unfortunately, this is not going to work, because only certain
+<p>
+http://film-quotes.com/api/?<span style="color:red">movie</span>=<span style="color:blue;font-weight:bold;">Nausicaä of the Valley of the Wind</span>&amp;<span style="color:red">quote</span>=<span style="color:blue;font-weight:bold;">Even the topsoil is in our valley is polluted. But… I don't understand. Who could have polluted the entire earth?</span></strong>
+</p><p>Unfortunately, this is not going to work, because only certain
 characters are allowed in URLs, and your quote uses many that aren't
 allowed. You have to encode the URL in a special format so that the
 server can receive the text properly. When encoded correctly, the URL
 should look like this:</p>
-<p><a class="reference external" href="http://film-quotes.com/api/?character=Nausica%C3%A4&amp;quote=Even+the+topsoil+is+in+our+valley+is+polluted.+But%E2%80%A6+I+don%27t+understand.+Who+could+have+polluted+the+entire+earth%3F">http://film-quotes.com/api/?character=Nausica%C3%A4&amp;quote=Even+the+topsoil+is+in+our+valley+is+polluted.+But%E2%80%A6+I+don%27t+understand.+Who+could+have+polluted+the+entire+earth%3F</a></p>
-<p>Fortunately, the <code class="docutils literal"><span class="pre">Web.BuildRequestData</span></code> block can be used to encode
+<p>
+http://film-quotes.com/api/?<span style="color:red">movie</span>=<span style="color:blue;font-weight:bold;">Nausica%C3%A4+of+the+Valley+of+the+Wind</span>&amp;<span style="color:red">quote</span>=<span style="color:blue;font-weight:bold;">Even+the+topsoil+is+in+our+valley+is+polluted.+But%E2%80%A6+I+don%27t+understand.+Who+could+have+polluted+the+entire+earth%3F</span>
+</p><p>Fortunately, the <code class="docutils literal"><span class="pre">Web.BuildRequestData</span></code> block can be used to encode
 the query string part of your URL. To properly build the URL in the
 previous example, you would assemble your blocks like
 this:</p>
@@ -282,7 +286,7 @@ Karma!</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../appendix/index.html" class="btn btn-neutral float-right" title="Appendix" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../location/index.html" class="btn btn-neutral float-right" title="Location" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../qr-code/index.html" class="btn btn-neutral" title="QR Code" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
