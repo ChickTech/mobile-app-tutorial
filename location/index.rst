@@ -1,8 +1,7 @@
 Location
 ========
 
-Imagine that you are an app inventor living in MacEnrique, IL. Your housemate PJ has an interesting problem: whenever there's a full moon she turns into a werewolf and runs all over town terrorizing rabbits, squirrels, and other small animals. After a full night of being a werewolf, PJ usually wakes up in a random place with no memory of how she got there. In addition, she also has a huge craving for waffles [#]_. Knowing that you're an app inventor, she asks you to make an app to help her out.
-
+Imagine that you are an app inventor living in MacEnrique, IL. Your housemate PJ has an interesting problem: whenever there's a full moon she turns into a werewolf and runs all over town terrorizing rabbits, squirrels, and other small animals. After a full night of being a werewolf, PJ usually wakes up in a random place with no memory of how she got there, along with a huge craving for waffles [#]_. Knowing that you're an app inventor, she asks you to make an app to help her out.
 
 Download :download:`WerewolfAssistant.aia` and :doc:`import it into App Inventor </appendix/importing-projects/index>`. The screen will look like this:
 
@@ -14,19 +13,26 @@ Drag a ``LocationSensor`` component from the Sensors section into the screen, an
 
   .. exercisehint:: You will need to use a ``join`` block (found in Text group).
 
+  .. exercisehint:: The ``join`` block can join as many text blocks as you want.
+
 If you are doing this tutorial on a device that doesn't have a SIM card, it might take a pretty long time for your phone to get the location. Let's make your phone vibrate every time the location changes so you're not staring at your phone for a whole minute.
 
 .. exercise:: Drag a ``Sound`` component into your screen in Designer. In Blocks, add a block so that your phone vibrates for a second when the location changes.
 
 PJ thinks it's nice that the app shows her coordinates, but since she never knows where she is when she wakes up, what she really wants to see is a map. Of course, every smartphone has a map application, so App Inventor helpfully gives you the ability to open up and send data to an external map application.
 
-Note that there is already an ``ActivityStarter`` component in the project. Its ``Action`` property is already set to "android.intent.action.VIEW", which is a code that tells Android OS that we want to view something in another app. But we also need to set the ``DataUri`` property, which needs to contain the coordinates we want to view. Android OS expects a certain format for geographical data. For example::
+Drag an ``ActivityStarter`` component into your screen. Then add these blocks to your program:
+
+.. image:: openMap-procedure.png
+
+
+In the ``openMap`` procedure, you set the ``ActivityStart1.Action`` property to "android.intent.action.VIEW", which is a code that tells Android OS that we want to view something in another app. You set the ``ActivityStart1.DataUri`` property to a set of coordinates. Android OS expects a certain format for geographical data. For example::
 
   geo:41.963,-87.684
 
-That is, the coordinate format is the text "geo:", followed by the latitude, followed by a comma, and ending with the longitude.
+That is, the coordinate format is the text "geo:", followed by the latitude, followed by a comma, and ending with the longitude. Run the app to see that clicking the "Open map" button shows a map of the Ravenswood neighborhood of Chicago.
 
-.. exercise:: Fix the app so that when you click the "Open map" button, your app will open a map to your current location.
+.. exercise:: Change the procedure ``openMap`` so that it can open a map to an arbitrary location. First, add two input blocks: ``latitude`` and ``longitude``. Second, make it so that ``ActivityStarter1.DataUri`` is set according to the values of ``latitude`` and ``longitude``.
 
   .. exercisehint:: You'll probably want to make use of global variables.
 
