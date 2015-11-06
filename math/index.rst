@@ -3,7 +3,7 @@ Math
 
 Now it's time to put some of the skills you acquired to tackle some
 basic math problems. Create a new project in App Inventor and name it
-"Math". Build the screen shown in the following image:
+"Addition". Build the screen shown in the following image:
 
 .. image:: math-screen.png
 
@@ -25,8 +25,7 @@ program:
 Run your app and observe that the numbers are different every time you
 refresh.
 
-.. exercise:: Change the logic in your program so that when the user clicks the Submit
-  button, her answer is checked against the value of x + y.
+.. exercise:: Change the logic in your program so that when the user clicks the Submit button, her answer is checked against the value of x + y. Let the player know if she got the answer right or wrong.
 
 .. exercise:: App Inventor has a lot of math-related blocks, so you can make the math
   problem as complex as you want. Change the math problem in your program
@@ -61,6 +60,8 @@ be to hold all that text. Instead, you can put the variable names inside
 square brackets, and then, inside the ``Screen1.Initialize`` block, replace the variable names with their numerical values:
 
 .. image:: popejet-blocks.png
+
+.. tip:: Because of how large the amount of text is, it might take up so much space that when you try to type an answer into the textbox, the keyboard covers up the textbox. To avoid this problem, check the Scrollable checkbox in the Properties sidebar for ``Screen1``.
 
 Run the app to see that both [maxSpeed] and [missileRange] are replaced with random numbers in the description label.
 

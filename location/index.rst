@@ -78,7 +78,7 @@ Add a new button whose text is "Change home address". Your screen should look li
 
   .. exercisehint:: Remember to replace spaces with pluses.
 
-Alright! Run the app again to see that changing the home address causes the directions to show a different starting point. However, there is a small problem. Refresh your app and see what happens when you click on ``HomeButton``. It didn't remember the new home address! Or maybe complained with the error "Can't find destination".
+Alright! Run the app again to see that changing the home address causes the directions to show a different starting point. However, there is a small problem. Refresh your app, and then see what happens when you click on ``HomeButton``. It didn't remember the new home address! Or maybe complained with the error "Can't find destination".
 
 Variables only exist as long as an app is running. When you restart an app, all the variables are recreated from scratch. In order for your app to persist data, you must rely on a database. App Inventor provides a database in the form of the ``TinyDB`` component, available in the Storage group.
 
