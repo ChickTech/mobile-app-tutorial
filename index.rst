@@ -10,6 +10,7 @@ Table of Contents:
    requirements/index
    installation/index
    emulator-installation/index
+   demo/index
    the-basics/index
    camera/index
    math/index
