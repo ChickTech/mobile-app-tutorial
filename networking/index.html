@@ -88,6 +88,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../requirements/index.html">Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../emulator-installation/index.html">Emulator Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demo/index.html">Demo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../the-basics/index.html">The Basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../camera/index.html">Camera</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../math/index.html">Math</a></li>
@@ -95,6 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../qr-code/index.html">QR Code</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Networking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../location/index.html">Location</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/index.html">Server</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a></li>
 </ul>
 
@@ -142,14 +144,11 @@
             
   <div class="section" id="networking">
 <h1>Networking<a class="headerlink" href="#networking" title="Permalink to this headline">¶</a></h1>
-<p>Imagine, for a moment, that you are an app inventor living in Butterton,
-IL. Your friend and neighbor, Tracy, had a cat named Space Cat who left
+<p>Imagine that you are an app inventor living in Pork Ridge, IL. Your friend and neighbor, Tracy, had a cat named Space Cat who left
 just the other day. It turns out that Space Cat was really a space alien
 who was here to study humans, but she got homesick so she decided to
-return to her home planet. Despite her abrupt departure, Space Cat
-really did enjoy her time with Tracy, and left her a farewell present in
-the form of an .aia file. Tracy doesn't know much about App Inventor, so
-she asks you to take a look.</p>
+return to her home planet <a class="footnote-reference" href="#id5" id="id1">[1]</a>. Despite her abrupt departure, Space Cat
+really did enjoy her time with Tracy, and created an app for her as a farewell present. Tracy thinks the app is a bit weird and asks you to take a look at it.</p>
 <p>Download <a class="reference download internal" href="../_downloads/FarewellTracy.aia"><code class="xref download docutils literal"><span class="pre">FarewellTracy.aia</span></code></a> file and <code class="xref doc docutils literal"><span class="pre">import</span> <span class="pre">it</span> <span class="pre">into</span> <span class="pre">App</span> <span class="pre">Inventor</span></code>. The screen will look like this:</p>
 <img alt="../_images/farewell-tracy.png" src="../_images/farewell-tracy.png" />
 <p>Run the app and see how it displays your phone's IP address near the
@@ -162,25 +161,15 @@ over the Internet. In this case, a web request is sent to
 server, it's shown by <code class="docutils literal"><span class="pre">IPAddressLabel</span></code>. Open the above URL in the web
 browser on your computer and you'll also see an IP address, although
 probably not the same one as your phone's.</p>
-<p>Space Cat must have put inordinate value on knowing one's IP address,
-but Tracy couldn't care less (although she appreciates the gesture). She
-asks if you could replace that part of the screen with something more
-interesting. You know that Tracy is a designer, so you decide to show a
-design-related quote instead.</p>
+<p>Space Cat must have come from a culture where it's very important to know one's IP address at all times, but Tracy couldn't care less (although she appreciates the gesture). She asks if you could replace that part of the screen with something more interesting. You know that Tracy is a designer, so you decide to show something related to her profession. You find an interesting site called <a class="reference external" href="http://quotesondesign.com/">Quotes on Design</a> that provides a URL that shows a random quote every time you visit it.</p>
 <div class="admonition exercise">
 <p class="first admonition-title">Exercise</p>
-<p class="last">Delete the label that says &quot;Your IP address&quot;, and rename <code class="docutils literal"><span class="pre">IPAddressLabel</span></code> to <code class="docutils literal"><span class="pre">QuoteLabel</span></code>. Change the blocks in the program so that <code class="docutils literal"><span class="pre">QuoteLabel</span></code> displays the results of this URL: <code class="docutils literal"><span class="pre">http://quotesondesign.com/api/3.0/api-3.0.json</span></code>.</p>
+<p class="last">Delete the label that says &quot;Your IP address&quot;. Rename <code class="docutils literal"><span class="pre">IPAddressLabel</span></code> to <code class="docutils literal"><span class="pre">QuoteLabel</span></code>. Change the blocks in the program so that <code class="docutils literal"><span class="pre">QuoteLabel</span></code> displays the results of this URL: <code class="docutils literal"><span class="pre">http://quotesondesign.com/api/3.0/api-3.0.json</span></code>.</p>
 </div>
 <p>After making the change, run the app again and you'll see something like
-this:</p>
+this (the quote will probably be different):</p>
 <img alt="../_images/design-quote-json.png" src="../_images/design-quote-json.png" />
-<p>What's going on here? View the URL in your browser and you'll see the
-same weird-looking text. Unlike the last URL, this URL doesn't return
-plain text—it returns
-<a class="reference external" href="https://www.google.com/search?q=what+is+json">JSON</a>, a structured
-text format. While most URLs are home to web pages, this URL has an
-Application Programming Interface (usually shortened to API). An API is
-meant to be consumed by an application.</p>
+<p>What's going on here? View the URL in your browser and you'll see the same weird-looking text. Unlike the last URL, this URL doesn't return plain text—it returns JSON <a class="footnote-reference" href="#id6" id="id2">[2]</a>, a structured text format. While most URLs are home to web pages, this URL hosts an Application Programming Interface (API) <a class="footnote-reference" href="#id7" id="id3">[3]</a>. An API is meant to be consumed by an application.</p>
 <p>JSON often isn't very readable to humans because it's intended to be
 read by machines. A JSON result usually contains multiple items of data.
 This is easier to see if we reformat it in a human-readable way:</p>
@@ -193,14 +182,10 @@ This is easier to see if we reformat it in a human-readable way:</p>
 </pre></div>
 </div>
 <p>You can see that not only does the result contain a quote, it also
-contains the author of the quote, as well as some other pieces of data.</p>
-<p>If you use the <code class="docutils literal"><span class="pre">Web.JsonTextDecode</span></code> block to parse the above JSON
-text, it will yield a list of lists:</p>
+contains the author of the quote, along with some other pieces of data.</p>
+<p>If you use the <code class="docutils literal"><span class="pre">Web.JsonTextDecode</span></code> block to parse the above JSON text, it will yield a list of lists:</p>
 <img alt="../_images/list-of-lists1.png" src="../_images/list-of-lists1.png" />
-<p>A list of lists is essentially a lookup table. You can read more about
-lists of lists in <a class="reference internal" href="../appendix/list-of-lists/index.html"><em>here</em></a>. You can use the
-<code class="docutils literal"><span class="pre">look</span> <span class="pre">up</span> <span class="pre">in</span> <span class="pre">pair</span></code> block from the List group to get the value for a
-given key. For example, to display just the quote in <code class="docutils literal"><span class="pre">QuoteLabel</span></code>, you
+<p>A list of lists is essentially a lookup table. You can read more about lists of lists <a class="reference internal" href="../appendix/list-of-lists/index.html"><em>here</em></a>. You can use the <code class="docutils literal"><span class="pre">look</span> <span class="pre">up</span> <span class="pre">in</span> <span class="pre">pair</span></code> block from the List group to get the value for a given key. For example, to display just the quote in <code class="docutils literal"><span class="pre">QuoteLabel</span></code>, you
 would do something like this:</p>
 <img alt="../_images/display-quote.png" src="../_images/display-quote.png" />
 <div class="admonition exercise">
@@ -226,7 +211,7 @@ URL in your browser and see what happens.</p>
 <p>Tracy loves being able to view different cat pictures! After a few days,
 however, you receive a text from her that says: &quot;Some days I only feel
 like seeing photos of cats wearing hats. Other days I only want to see
-cats in space. Can you do something about that?&quot;</p>
+cats in space. Can you do something about that?&quot; <a class="footnote-reference" href="#id8" id="id4">[4]</a></p>
 <p>Fortunately, the Cat API allows you to specify what category of cat
 photo you'd like to get. It does so via the query string. The query
 string is the part of a URL that comes after the question mark symbol
@@ -235,36 +220,29 @@ already using a query string parameter named &quot;size&quot;, whose value we've
 set to &quot;small&quot;. In the text block that contains the Cat API URL, change the value of &quot;size&quot; to &quot;large&quot;, and see how that change affects the image that is displayed after you click the Refresh button.</p>
 <p>Inside the query string, query string parameters are separated by the
 ampersand symbol (&amp;). For example:</p>
-<p><a class="reference external" href="https://awesome-dinosaurs.com/api/?size=huge&amp;action=chomp&amp;victim=lawyer&amp;accessory=fedora">https://awesome-dinosaurs.com/api/?size=huge&amp;action=chomp&amp;victim=lawyer&amp;accessory=fedora</a></p>
+<img alt="../_images/dinopics-url.png" src="../_images/dinopics-url.png" />
 <p>Assuming there really was an API for awesome dinosaur images, the above
 URL might be what you'd use to request a picture of a huge,
 fedora-wearing dinosaur chomping on a lawyer.</p>
 <p>To control the category of the cat photos, you just need to add the
 &quot;category&quot; query string to the end, like so:</p>
 <p><a class="reference external" href="http://thecatapi.com/api/images/get?size=small&amp;category=hats">http://thecatapi.com/api/images/get?size=small&amp;category=hats</a></p>
+<p>Add a new <code class="docutils literal"><span class="pre">ListPicker</span></code> to your screen, and name it <code class="docutils literal"><span class="pre">CategoryListPicker</span></code>. Make sure its properties look like this:</p>
+<img alt="../_images/catcategorypicker-properties.png" src="../_images/catcategorypicker-properties.png" />
 <div class="admonition exercise">
 <p class="first admonition-title">Exercise</p>
-<p>Add a <code class="docutils literal"><span class="pre">ListPicker</span></code> to your screen, and add the options Hat, Space, and Clothes to it. Make sure its properties look like <a class="reference download internal" href="../_downloads/catcategorypicker-properties.png"><code class="xref download docutils literal"><span class="pre">this</span></code></a>. Then change your blocks so that whenever you click <code class="docutils literal"><span class="pre">RefreshButton</span></code>, <code class="docutils literal"><span class="pre">Image1</span></code> will show a new image that corresponds to the current category selected in the <code class="docutils literal"><span class="pre">ListPicker</span></code>.</p>
+<p>Modify your blocks so that whenever you click <code class="docutils literal"><span class="pre">RefreshButton</span></code>, <code class="docutils literal"><span class="pre">Image1</span></code> will show a new image that corresponds to the current category selected in <code class="docutils literal"><span class="pre">CategoryListPicker</span></code>.</p>
 <div class="last exercise-hint">
 <button>Hint</button><div class="hidden hint-body">You'll probably want to use the <code class="docutils literal"><span class="pre">join</span></code> block.</div></div></div>
-<p>Although assembling the URL by concatenating strings does work in this
-case, it's doesn't work well for all query strings. Let's say that there
-is an API that allows you to submit your favorite movie quotes so that
-they appear on a website. You decide you want to submit a line from <em>Nausicaä of the Valley of the Wind</em>:</p>
-<blockquote>
-<div>Even the topsoil in our valley is polluted. But… I don't
-understand. Who could have polluted the entire earth?</div></blockquote>
-<p>So you assemble a URL that looks like this:</p>
-<p>
-http://film-quotes.com/api/?<span style="color:red">movie</span>=<span style="color:blue;font-weight:bold;">Nausicaä of the Valley of the Wind</span>&amp;<span style="color:red">quote</span>=<span style="color:blue;font-weight:bold;">Even the topsoil is in our valley is polluted. But… I don't understand. Who could have polluted the entire earth?</span></strong>
-</p><p>Unfortunately, this is not going to work, because only certain
+<p>Although assembling the URL by concatenating strings does work in this case, it's doesn't work well for all query strings. Let's say that there is an API that allows you to search for movie quotes. You want to get all the quotes from the movie <em>La Señora de Fátima</em>, so you assemble a URL that looks like this:</p>
+<img alt="../_images/incorrect-url.png" src="../_images/incorrect-url.png" />
+<p>Unfortunately, this is not going to work, because only certain
 characters are allowed in URLs, and your quote uses many that aren't
 allowed. You have to encode the URL in a special format so that the
 server can receive the text properly. When encoded correctly, the URL
 should look like this:</p>
-<p>
-http://film-quotes.com/api/?<span style="color:red">movie</span>=<span style="color:blue;font-weight:bold;">Nausica%C3%A4+of+the+Valley+of+the+Wind</span>&amp;<span style="color:red">quote</span>=<span style="color:blue;font-weight:bold;">Even+the+topsoil+is+in+our+valley+is+polluted.+But%E2%80%A6+I+don%27t+understand.+Who+could+have+polluted+the+entire+earth%3F</span>
-</p><p>Fortunately, the <code class="docutils literal"><span class="pre">Web.BuildRequestData</span></code> block can be used to encode
+<img alt="../_images/correct-url.png" src="../_images/correct-url.png" />
+<p>Fortunately, the <code class="docutils literal"><span class="pre">Web.BuildRequestData</span></code> block can be used to encode
 the query string part of your URL. To properly build the URL in the
 previous example, you would assemble your blocks like
 this:</p>
@@ -272,11 +250,36 @@ this:</p>
 <p>Note that <code class="docutils literal"><span class="pre">Web.BuildRequestData</span></code> accepts a list of lists.</p>
 <div class="admonition exercise">
 <p class="first admonition-title">Exercise</p>
-<p class="last">Change how the URL is assembled so that you're using <code class="docutils literal"><span class="pre">Web1.BuildRequestData</span></code> to create the query string portion of the URL.</p>
+<p class="last">Change how the URL for the Cat API is assembled so that you're using <code class="docutils literal"><span class="pre">Web1.BuildRequestData</span></code> to create the query string portion of the URL.</p>
 </div>
 <p>Namaste! In this chapter, you learned about the <code class="docutils literal"><span class="pre">Web</span></code> component, JSON,
 APIs, and query strings. You are one step closer to becoming the Guru of
 Karma!</p>
+<p class="rubric">Footnotes</p>
+<table class="docutils footnote" frame="void" id="id5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Well that's what Space Cat told Tracy. In reality, she wrote a best-selling book about humans and has to go back to do the book tour.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id6" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>JSON stands for JavaScript Object Notation. See <a class="reference external" href="https://en.wikipedia.org/wiki/JSON">https://en.wikipedia.org/wiki/JSON</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id7" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td>Application Programming Interfaces (APIs) are the primary way that mobile apps communicate with the Internet. See <a class="reference external" href="https://en.wikipedia.org/wiki/Application_programming_interface">https://en.wikipedia.org/wiki/Application_programming_interface</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id8" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td>This is what sociologists refer to as a First World Problem.</td></tr>
+</tbody>
+</table>
 </div>
 
 

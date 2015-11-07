@@ -64,9 +64,7 @@ global variable:
 Note that we used the same name, "image", for our global variable as our
 local variable. This is not a problem for App Inventor, because ``get``
 blocks that reference global variables always have the word "global" in
-their names. However, you might confuse yourself when you have a global
-variable with the same name as a local variable, so when possible, use a
-different name for the global variable.
+their names. However, even if they store the same value, there is no requirement that global variables need to have the same name as local variables. 
 
 .. exercise:: Change the name of the global variable from "image" to "imageFile".
 
@@ -90,7 +88,7 @@ and press the Share button. What happens?
 
 .. exercise::
 
-    The ``Sharing1.ShareFile block`` can't do its work because the global variable ``imageFile`` doesn't have a reasonable value. To see what value imageFile has before you take a picture, put a ``Notifier1.ShowAlert[getglobal imageFile]]`` block inside of ``ShareButton.Click``.
+    The ``Sharing1.ShareFile block`` can't do its work because the global variable ``imageFile`` doesn't have a reasonable value. To see what value ``imageFile`` has before you take a picture, put a ``Notifier1.ShowAlert[get global imageFile]]`` block inside of ``ShareButton.Click``.
 
 So, ``imageFile`` gets set to the number ``0`` by default, but it
 doesn't have to be that way. You'll notice that the

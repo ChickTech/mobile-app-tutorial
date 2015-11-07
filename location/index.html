@@ -33,7 +33,7 @@
 
   
     <link rel="top" title="Mobile App Tutorial 0.1 documentation" href="../index.html"/>
-        <link rel="next" title="Appendix" href="../appendix/index.html"/>
+        <link rel="next" title="Server" href="../server/index.html"/>
         <link rel="prev" title="Networking" href="../networking/index.html"/> 
 
   
@@ -88,6 +88,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../requirements/index.html">Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../emulator-installation/index.html">Emulator Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demo/index.html">Demo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../the-basics/index.html">The Basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../camera/index.html">Camera</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../math/index.html">Math</a></li>
@@ -95,6 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../qr-code/index.html">QR Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../networking/index.html">Networking</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Location</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/index.html">Server</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a></li>
 </ul>
 
@@ -142,29 +144,32 @@
             
   <div class="section" id="location">
 <h1>Location<a class="headerlink" href="#location" title="Permalink to this headline">¶</a></h1>
-<p>Imagine that you are an app inventor living in MacEnrique, IL. Your housemate PJ has an interesting problem: whenever there's a full moon she turns into a werewolf and runs all over town terrorizing rabbits, squirrels, and other small animals. After a full night of being a werewolf, PJ usually wakes up in a random place with no memory of how she got there. In addition, she also has a huge craving for waffles <a class="footnote-reference" href="#id4" id="id1">[1]</a>. Knowing that you're an app inventor, she asks you to make an app to help her out.</p>
+<p>Imagine that you are an app inventor living in MacEnrique, IL. Your housemate PJ has an interesting problem: whenever there's a full moon she turns into a werewolf and runs all over town terrorizing rabbits, squirrels, and other small animals. After a full night of being a werewolf, PJ usually wakes up in a random place with no memory of how she got there, along with a huge craving for waffles <a class="footnote-reference" href="#id4" id="id1">[1]</a>. Knowing that you're an app inventor, she asks you to make an app to help her out.</p>
 <p>Download <a class="reference download internal" href="../_downloads/WerewolfAssistant.aia"><code class="xref download docutils literal"><span class="pre">WerewolfAssistant.aia</span></code></a> and <a class="reference internal" href="../appendix/importing-projects/index.html"><em>import it into App Inventor</em></a>. The screen will look like this:</p>
 <img alt="../_images/werewolf-assistant-screen.png" src="../_images/werewolf-assistant-screen.png" />
 <p>Drag a <code class="docutils literal"><span class="pre">LocationSensor</span></code> component from the Sensors section into the screen, and then add a <code class="docutils literal"><span class="pre">LocationSensor1.LocationChanged</span></code> block to your program. This block will be executed whenever <code class="docutils literal"><span class="pre">LocationSensor1</span></code> receives new location data. If your Android device does not have a SIM card, make sure to turn on the GPS or <code class="docutils literal"><span class="pre">LocationSensor.LocationChanged</span></code> will probably never be executed.</p>
 <div class="admonition exercise">
 <p class="first admonition-title">Exercise</p>
 <p>Change the program so that whenever new location data is received, <code class="docutils literal"><span class="pre">CoordinatesLabel</span></code> will be updated with the latitude and longitude.</p>
-<div class="last exercise-hint">
-<button>Hint</button><div class="hidden hint-body">You will need to use a <code class="docutils literal"><span class="pre">join</span></code> block (found in Text group).</div></div></div>
+<div class="exercise-hint">
+<button>Hint</button><div class="hidden hint-body">You will need to use a <code class="docutils literal"><span class="pre">join</span></code> block (found in Text group).</div></div><div class="last exercise-hint">
+<button>Hint</button><div class="hidden hint-body">The <code class="docutils literal"><span class="pre">join</span></code> block can join as many text blocks as you want.</div></div></div>
 <p>If you are doing this tutorial on a device that doesn't have a SIM card, it might take a pretty long time for your phone to get the location. Let's make your phone vibrate every time the location changes so you're not staring at your phone for a whole minute.</p>
 <div class="admonition exercise">
 <p class="first admonition-title">Exercise</p>
 <p class="last">Drag a <code class="docutils literal"><span class="pre">Sound</span></code> component into your screen in Designer. In Blocks, add a block so that your phone vibrates for a second when the location changes.</p>
 </div>
 <p>PJ thinks it's nice that the app shows her coordinates, but since she never knows where she is when she wakes up, what she really wants to see is a map. Of course, every smartphone has a map application, so App Inventor helpfully gives you the ability to open up and send data to an external map application.</p>
-<p>Note that there is already an <code class="docutils literal"><span class="pre">ActivityStarter</span></code> component in the project. Its <code class="docutils literal"><span class="pre">Action</span></code> property is already set to &quot;android.intent.action.VIEW&quot;, which is a code that tells Android OS that we want to view something in another app. But we also need to set the <code class="docutils literal"><span class="pre">DataUri</span></code> property, which needs to contain the coordinates we want to view. Android OS expects a certain format for geographical data. For example:</p>
+<p>Drag an <code class="docutils literal"><span class="pre">ActivityStarter</span></code> component into your screen. Then add these blocks to your program:</p>
+<img alt="../_images/openMap-procedure.png" src="../_images/openMap-procedure.png" />
+<p>In the <code class="docutils literal"><span class="pre">openMap</span></code> procedure, you set the <code class="docutils literal"><span class="pre">ActivityStart1.Action</span></code> property to &quot;android.intent.action.VIEW&quot;, which is a code that tells Android OS that we want to view something in another app. You set the <code class="docutils literal"><span class="pre">ActivityStart1.DataUri</span></code> property to a set of coordinates. Android OS expects a certain format for geographical data. For example:</p>
 <div class="highlight-python"><div class="highlight"><pre>geo:41.963,-87.684
 </pre></div>
 </div>
-<p>That is, the coordinate format is the text &quot;geo:&quot;, followed by the latitude, followed by a comma, and ending with the longitude.</p>
+<p>That is, the coordinate format is the text &quot;geo:&quot;, followed by the latitude, followed by a comma, and ending with the longitude. Run the app to see that clicking the &quot;Open map&quot; button shows a map of the Ravenswood neighborhood of Chicago.</p>
 <div class="admonition exercise">
 <p class="first admonition-title">Exercise</p>
-<p>Fix the app so that when you click the &quot;Open map&quot; button, your app will open a map to your current location.</p>
+<p>Change the procedure <code class="docutils literal"><span class="pre">openMap</span></code> so that it can open a map to an arbitrary location. First, add two input blocks: <code class="docutils literal"><span class="pre">latitude</span></code> and <code class="docutils literal"><span class="pre">longitude</span></code>. Second, make it so that <code class="docutils literal"><span class="pre">ActivityStarter1.DataUri</span></code> is set according to the values of <code class="docutils literal"><span class="pre">latitude</span></code> and <code class="docutils literal"><span class="pre">longitude</span></code>.</p>
 <div class="last exercise-hint">
 <button>Hint</button><div class="hidden hint-body">You'll probably want to make use of global variables.</div></div></div>
 <p>Run your app to see your current location on the map. Pretty sweet, huh?</p>
@@ -204,7 +209,7 @@
 <button>Hint</button><div class="hidden hint-body">You'll need to add a new global variable to store the home address.</div></div><div class="exercise-hint">
 <button>Hint</button><div class="hidden hint-body">You'll need to add the <code class="docutils literal"><span class="pre">Notifier.AfterTextInput</span></code> block.</div></div><div class="last exercise-hint">
 <button>Hint</button><div class="hidden hint-body">Remember to replace spaces with pluses.</div></div></div>
-<p>Alright! Run the app again to see that changing the home address causes the directions to show a different starting point. However, there is a small problem. Refresh your app and see what happens when you click on <code class="docutils literal"><span class="pre">HomeButton</span></code>. It didn't remember the new home address! Or maybe complained with the error &quot;Can't find destination&quot;.</p>
+<p>Alright! Run the app again to see that changing the home address causes the directions to show a different starting point. However, there is a small problem. Refresh your app, and then see what happens when you click on <code class="docutils literal"><span class="pre">HomeButton</span></code>. It didn't remember the new home address! Or maybe complained with the error &quot;Can't find destination&quot;.</p>
 <p>Variables only exist as long as an app is running. When you restart an app, all the variables are recreated from scratch. In order for your app to persist data, you must rely on a database. App Inventor provides a database in the form of the <code class="docutils literal"><span class="pre">TinyDB</span></code> component, available in the Storage group.</p>
 <p>Drag a <code class="docutils literal"><span class="pre">TinyDB</span></code> into your screen and then  add these blocks to your program:</p>
 <img alt="../_images/tinydb-getvalue.png" src="../_images/tinydb-getvalue.png" />
@@ -244,7 +249,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../appendix/index.html" class="btn btn-neutral float-right" title="Appendix" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../server/index.html" class="btn btn-neutral float-right" title="Server" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../networking/index.html" class="btn btn-neutral" title="Networking" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

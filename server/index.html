@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Introduction &mdash; Mobile App Tutorial 0.1 documentation</title>
+  <title>Server &mdash; Mobile App Tutorial 0.1 documentation</title>
   
 
   
@@ -33,8 +33,8 @@
 
   
     <link rel="top" title="Mobile App Tutorial 0.1 documentation" href="../index.html"/>
-        <link rel="next" title="Requirements" href="../requirements/index.html"/>
-        <link rel="prev" title="Welcome to Mobile App Tutorial!" href="../index.html"/> 
+        <link rel="next" title="Appendix" href="../appendix/index.html"/>
+        <link rel="prev" title="Location" href="../location/index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -84,7 +84,7 @@
             
             
                 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../requirements/index.html">Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../emulator-installation/index.html">Emulator Installation</a></li>
@@ -96,7 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../qr-code/index.html">QR Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../networking/index.html">Networking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../location/index.html">Location</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../server/index.html">Server</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Server</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a></li>
 </ul>
 
@@ -128,11 +128,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>Introduction</li>
+    <li>Server</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/introduction/index.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/server/index.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -142,12 +142,32 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>&quot;There should be an app for that.&quot; Have you ever thought that? Have you ever imagined how cool it would be to build your own app? Well, you've come to the right place!</p>
-<p>In this tutorial, you will learn how to create mobile apps using a free tool called <a class="reference external" href="http://www.appinventor.org">MIT App Inventor</a>. Unlike other programming environments, App Inventor runs within your browser and doesn't require you to learn a programming language. All you need is a computer and an Android phone.</p>
-<p>Throughout this tutorial you will learn to build a <a class="reference external" href="https://en.m.wikipedia.org/wiki/Puzzlehunt">puzzle hunt</a> app. Your completed puzzle hunt app will showcase your creativity, impress your family, and entertain your friends!</p>
-<p>So what are you waiting for? <a class="reference internal" href="../requirements/index.html"><em>Start your journey now</em></a>.</p>
+  <div class="section" id="server">
+<h1>Server<a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h1>
+<p>First, make sure to log into your <a class="reference external" href="https://www.pythonanywhere.com">PythonAnywhere account</a>. Then, follow the directions in the video below to download the server software and do some configuration. The commands that are executed in the video are listed below, so you can save some time by copying and pasting them in instead of typing them in manually.</p>
+<div class="code highlight-python"><div class="highlight"><pre>git clone https://github.com/chicktech/puzzle-hunt.git
+cd puzzle-hunt
+. setup.sh
+</pre></div>
+</div>
+<iframe src="https://www.youtube.com/embed/upZeyUyaKDk" frameborder="0" allowfullscreen></iframe><p>Now that the server software is present and set up, you need to create a web app. Follow the steps in the following video to accomplish this. At the part where you need to edit the WSGI configuration file, copy and paste this code in:</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os.path</span>
+
+<span class="c"># add your project directory to the sys.path</span>
+<span class="n">project_home</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s">u&#39;~/puzzle-hunt&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">project_home</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="p">[</span><span class="n">project_home</span><span class="p">]</span> <span class="o">+</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span>
+
+<span class="c"># import flask app but need to call it &quot;application&quot; for WSGI to work</span>
+<span class="kn">from</span> <span class="nn">flask_app</span> <span class="kn">import</span> <span class="n">app</span> <span class="k">as</span> <span class="n">application</span>
+<span class="n">application</span><span class="o">.</span><span class="n">secret_key</span> <span class="o">=</span> <span class="s">&#39;super secret key&#39;</span>
+<span class="n">application</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s">&#39;SESSION_TYPE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;filesystem&#39;</span>
+</pre></div>
+</div>
+<p>Note that whenever you see <code class="docutils literal"><span class="pre">chicktech</span></code> typed in, you should substitute that with your own username.</p>
+<iframe src="https://www.youtube.com/embed/p_LstQ0NnwE" frameborder="0" allowfullscreen></iframe><p>After you click the big green Reload button, a little circular animation appears. When the animation completes, you can click on the link above the button to visit your new puzzle hunt site! For the chicktech user, the site would be published at <a class="reference external" href="http://chicktech.pythonanywhere.com/">http://chicktech.pythonanywhere.com/</a>.</p>
+<p>One of the cool things you can do with your app is generate QR codes. Just click the &quot;Generate QR Code&quot; link, type anything you like in the Text field, hit submit, and you'll get back a QR code image. This image can be downloaded to your computer and printed or put on a web page.</p>
 </div>
 
 
@@ -157,10 +177,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../requirements/index.html" class="btn btn-neutral float-right" title="Requirements" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../appendix/index.html" class="btn btn-neutral float-right" title="Appendix" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../index.html" class="btn btn-neutral" title="Welcome to Mobile App Tutorial!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../location/index.html" class="btn btn-neutral" title="Location" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
