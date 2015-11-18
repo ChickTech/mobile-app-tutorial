@@ -1,7 +1,7 @@
 Location
 ========
 
-Imagine that you are an app inventor living in MacEnrique, IL. Your housemate PJ has an interesting problem: whenever there's a full moon she turns into a werewolf and runs all over town terrorizing rabbits, squirrels, and other small animals. After a full night of being a werewolf, PJ usually wakes up in a random place with no memory of how she got there, along with a huge craving for waffles [#]_. Knowing that you're an app inventor, she asks you to make an app to help her out.
+Imagine that you are an app inventor living in Snuffalo Cove, IL. Your housemate PJ has an interesting problem: whenever there's a full moon she turns into a werewolf and runs all over town terrorizing rabbits, squirrels, and other small animals. After a full night of being a werewolf, PJ usually wakes up in a random place with no memory of how she got there, along with a huge craving for waffles [#]_. Knowing that you're an app inventor, she asks you to make an app to help her out.
 
 Download :download:`WerewolfAssistant.aia` and :doc:`import it into App Inventor </appendix/importing-projects/index>`. The screen will look like this:
 

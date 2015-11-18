@@ -1,7 +1,7 @@
 Canvas
 ======
 
-Imagine that you are an app inventor living in Podunka, IL. You are friends with Adrienne, a local gypsy jazz musician. Adrienne recently released a new single called *Mustaches and Cat Eyes*. Like any forward-thinking indie musician, she decides to create a fun app to help promote her single.
+Imagine that you are an app inventor living in Napperville, IL. You are friends with Adrienne, a local gypsy jazz musician. Adrienne recently released a new single called *Mustaches and Cat Eyes*. Like any forward-thinking indie musician, she decides to create a fun app to help promote her single.
 
 Adrienne is an avid user of App Inventor and has already made a rudimentary
 first version. Unfortunately, she needs to prepare for her upcoming tour
