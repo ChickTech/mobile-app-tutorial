@@ -22,6 +22,7 @@ Table of Contents:
    exercises/index
    conclusion/index
    appendix/index
+   credits
 
 Indices and tables
 ==================
